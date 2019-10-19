@@ -10,7 +10,9 @@ exports.run = (client, message, args) => {
   .addField('Artık Devredışı:', '<a:iptal:626445972620443648> Webhook Koruması \n <a:iptal:626445972620443648> Ban Sınırı \n <a:iptal:626445972620443648> Kanal Silme Ban \n <a:iptal:626445972620443648> Kanal Açma Ban \n <a:iptal:626445972620443648> Spam Ban \n <a:iptal:626445972620443648> Sohbet Cooldown')
   .setColor('RED')
   message.channel.send(embed)
-  }
+ db.set(`aktif_${message.guild.id}`, 'Kapalı').then(i => {
+ })
+ }
   
   if(args[0] === "açık") {
    let embed = new Discord.RichEmbed()
@@ -21,7 +23,8 @@ exports.run = (client, message, args) => {
   .setColor('RED')
   message.channel.send(embed)   
     
-    
+     db.set(`aktif_${message.guild.id}`, 'Açık').then(i => {
+ })
   }
   
   

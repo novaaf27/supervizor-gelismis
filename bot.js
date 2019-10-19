@@ -47,6 +47,29 @@ fs.readdir('./komutlar/', (err, files) => {
   });
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 client.on('guildMemberAdd',async member => {
   let user = client.users.get(member.id);
   let chan = client.channels.get(db.fetch(`guvenlik${member.guild.id}`)) 
