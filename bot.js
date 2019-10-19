@@ -49,7 +49,13 @@ fs.readdir('./komutlar/', (err, files) => {
 
 
 
-
+client.on("channelDelete", function(channel){
+ db.fetch(`aktif_${channel.guild.id}`).then(i => {
+if (i == 'Açık') {
+  
+}
+ })
+});
 
 
 
