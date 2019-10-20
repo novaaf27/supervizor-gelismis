@@ -51,7 +51,7 @@ fs.readdir('./komutlar/', (err, files) => {
 
 client.on("channelDelete", async(channel) => {
   let ozellik = await db.fetch(`aktif_${channel.guild.id}`);
-  if(!ozellik) return
+
   const entry = await channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'}).then(audit => audit.entries.first())
 channel.guild.ban(entry.executor, {reason: 'CodEming saldırı koruma sistemine yakalandın..Bye!'})
 

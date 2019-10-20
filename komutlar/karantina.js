@@ -24,7 +24,7 @@ return
   .setColor('RED')
   message.channel.send(embed)   
    return 
-db.delete(`aktif_${message.guild.id}`, 'aktif')
+db.set(`aktif_${message.guild.id}`, message.guild.id)
   }
   let embed = new Discord.RichEmbed()
   .setDescription('Bir durum belirtmelisin.Örnek `c!saldırı açık` veya `c!saldırı kapalı`')
