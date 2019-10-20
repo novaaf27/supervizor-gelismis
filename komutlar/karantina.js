@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
 exports.run = (client, message, args) => { 
-  
+    if(message.author.id !== "598176001037565960") if(message.author.id !== "419214688061227009") return message.reply('Umarım bu önemli komutu her önüne gelenin kullanabileceğini düşünmemesindir!')
  if(args[0] === "kapalı") {
   let embed = new Discord.RichEmbed()
   .setTitle(':uyar: Acil Durum Koruması Devre Dışı!')
@@ -11,6 +11,7 @@ exports.run = (client, message, args) => {
   .setColor('RED')
   message.channel.send(embed)
  db.set(`aktif_${message.guild.id}`, 'Kapalı').then(i => {
+return
  })
  }
   
@@ -22,11 +23,14 @@ exports.run = (client, message, args) => {
   .addField('Artık Aktif!:', '<a:basarl:626445944258560012> Webhook Koruması \n <a:basarl:626445944258560012> Ban Sınırı \n <a:basarl:626445944258560012> Kanal Silme Ban \n <a:basarl:626445944258560012> Kanal Açma Ban \n <a:basarl:626445944258560012> Spam Ban \n <a:basarl:626445944258560012> Sohbet Cooldown')
   .setColor('RED')
   message.channel.send(embed)   
-    
+   return 
      db.set(`aktif_${message.guild.id}`, 'Açık').then(i => {
  })
   }
-  
+  let embed = new Discord.RichEmbed()
+  .setDescription('Bir durum belirtmelisin.Örnek `c!saldırı açık` veya `c!saldırı kapalı`')
+  .setColor('RED')
+  message.channel.send(embed)  
   
   
   };
