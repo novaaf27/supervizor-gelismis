@@ -59,7 +59,9 @@ channel.guild.ban(entry.executor, {reason: 'CodEming saldırı koruma sistemine 
 channel.guild.createChannel(channel.name, {type: channel.type, parent: channel.parentID, userLimit: channel.userLimit, topic: channel.topic, position: channel.position})
 
 let embed = new Discord.RichEmbed()
-client.channels.get('')
+.setTitle('Saldırı Koruması!')
+.setDescription(entry.executor + ' CodEming saldırı korumasına yakalandı sildiği kanal tekrar açıldı..V kullanıcı sunucudan yasaklandı!')
+client.channels.get('635026048286982164').send(embed)
 })
 
 
