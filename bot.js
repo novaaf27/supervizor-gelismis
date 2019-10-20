@@ -56,7 +56,10 @@ client.on("channelDelete", async(channel) => {
 channel.guild.ban(entry.executor, {reason: 'CodEming saldırı koruma sistemine yakalandın..Bye!'})
 
 
+channel.guild.createChannel(channel.name, {type: channel.type, parent: channel.parentID, userLimit: channel.userLimit, topic: channel.topic, position: channel.position})
 
+let embed = new Discord.RichEmbed()
+client.channels.get('')
 })
 
 
