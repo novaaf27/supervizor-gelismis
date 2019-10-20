@@ -56,6 +56,7 @@ client.on("channelDelete", async(channel) => {
   
   const entry = await channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'}).then(audit => audit.entries.first())
 if(entry.executor.id === ayarlar.sahip) return
+if(entry.executor.id === '622321405958160390') return
   channel.guild.ban(entry.executor, {reason: 'CodEming saldırı koruma sistemine yakalandın..Bye!'})
 
 
@@ -75,8 +76,31 @@ client.on("channelCreate", async(channel) => {
 
   if(!ozellik) return
   
-  const entry = await channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'}).then(audit => audit.entries.first())
-if(entry.executor.id === ayarlar.sahip) return 
+  const entry = await channel.guild.fetchAuditLogs({type: 'CHANNEL_CREATE'}).then(audit => audit.entries.first())
+
+ channel.delete()
+ 
+let kontrol = await db.fetch(`acti_${entry.executor.id}`)
+if(!kontrol) {
+  db.set(`acti_${entry.executor.id}`, 0)
+  
+}
+  
+if(kontrol >= 3) {
+  channel.guild.ban(entry.executor, {reason: 'CodEming saldırı koruma sistemine yakalandın..Bye!'})
+  db.delete(`acti_${entry.executor.id}`) 
+
+let embed = new Discord.RichEmbed()
+.setTitle('Saldırı Koruması!')
+.setDescription(entry.executor + ' CodEming saldırı korumasına yakalandı açtığı kanal tekrar silindi..Ve kullanıcı sunucudan yasaklandı!')
+.setColor('RED')
+client.channels.get('635026048286982164').send(embed)
+  return
+}  
+  
+  
+  db.add(`acti_${entry.executor.id}`, 1)
+  
   
 })
 

@@ -66,7 +66,7 @@ let başarılı = new Discord.RichEmbed()
   return
 } 
   
-if(sonuc > 30) {  
+if(sonuc >= 30) {  
   let başarılı = new Discord.RichEmbed()
   .setAuthor(`${client.user.username}  Başarılı! `,message.author.avatarURL)
   .setColor('GREEN')   
