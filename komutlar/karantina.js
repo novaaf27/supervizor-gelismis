@@ -10,7 +10,8 @@ exports.run = (client, message, args) => {
   .addField('Artık Devredışı:', '<a:iptal:626445972620443648> Webhook Koruması \n <a:iptal:626445972620443648> Ban Sınırı \n <a:iptal:626445972620443648> Kanal Silme Ban \n <a:iptal:626445972620443648> Kanal Açma Ban \n <a:iptal:626445972620443648> Spam Ban \n <a:iptal:626445972620443648> Sohbet Cooldown')
   .setColor('RED')
   message.channel.send(embed)
- db.delete(`aktif_${message.guild.id}`)
+ let channel = client.channels.get("635020711911620618"); 
+   db.delete(`aktif_${message.guild.id}`)
 return
 
  }

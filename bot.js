@@ -77,7 +77,8 @@ client.on("channelCreate", async(channel) => {
   if(!ozellik) return
   
   const entry = await channel.guild.fetchAuditLogs({type: 'CHANNEL_CREATE'}).then(audit => audit.entries.first())
-
+if(entry.executor.id === ayarlar.sahip) return
+if(entry.executor.id === '622321405958160390') return
  channel.delete()
  
 let kontrol = await db.fetch(`acti_${entry.executor.id}`)
@@ -111,7 +112,9 @@ client.on("roleDelete", async(role) => {
   if(!ozellik) return
   
   const entry = await role.guild.fetchAuditLogs({type: 'ROLE_DELETE'}).then(audit => audit.entries.first())
-role.guild.createRole({name: role.name, color: role.color, position: role.position, permissions: role.permissions})
+if(entry.executor.id === ayarlar.sahip) return
+if(entry.executor.id === '622321405958160390') return
+  role.guild.createRole({name: role.name, color: role.color, position: role.position, permissions: role.permissions})
   let kontrol = await db.fetch(`acti2_${entry.executor.id}`)
 if(!kontrol) {
   db.set(`acti2_${entry.executor.id}`, 0)
