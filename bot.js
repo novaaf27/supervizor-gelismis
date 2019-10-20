@@ -190,34 +190,6 @@ client.on('guildMemberAdd',async member => {
 });
 
 
-const kanal2 = ["C", "CO", "COD", "CODE", "CODEM", "CODEMİ", "CODEMİN", "CODEMİNG"];
-
-function randy2(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-client.on('ready', async(message) => {
-  client.setInterval(() => {
-      let randInt = randy2(0, 9);
-      let canal = kanal2[randInt];
-      let channel = client.channels.get("635020711911620618"); 
-
-    channel.setName('C');
-    channel.setName('CO');
-    channel.setName('COD');
-    channel.setName('CODE');
-    channel.setName('CODEM');
-    channel.setName('CODEMİ')
-    channel.setName('CODEMİN');
-    channel.setName('👑CODEMİNG👑');
-    channel.setName('CODEMİNG');
-    channel.setName('👑CODEMİNG👑');
-    channel.setName('🖤CODEMİNG🖤');
-  }, 3000);
-}); 
-
 
 
 client.on('messageDelete', async msg => {
@@ -328,13 +300,10 @@ let sa = new Discord.RichEmbed()
 
 //////////////////////////////////////////////
 
-let channel = client.channels.get("635023429212307457"); 
-channel.setName('Son Üyemiz: '+member.user.username)
+
 
 member.send(sa) 
 
-let channel2 = client.channels.get("635027176613478420"); 
-channel2.setName('Üye Sayısı: '+member.guild.members.filter(m => !m.user.bot).size)
   
 client.channels.get('635022722287534081').send(embed)
 
