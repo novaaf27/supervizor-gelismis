@@ -231,12 +231,12 @@ client.on("guildMemberAdd", async member => {
 var authorJoined = new Date(member.joinedTimestamp);
 var authorRegistered = new Date(member.user.createdTimestamp);  
   
-let sonuc = 200 - member.guild.members.filter(m => !m.user.bot).size
+let sonuc = 300 - member.guild.members.filter(m => !m.user.bot).size
 let embed = new Discord.RichEmbed()
 .setAuthor(`Sunucuya Katıldı!`, member.user.avatarURL)
 .setTitle('<a:hg:632903281148035102>'+ member.user.username)
 .setColor('BLUE')
-.setDescription('<a:hyper:632905422407335948> Sunucu şu anda; \n **'+member.guild.members.filter(m => m.user.bot).size+'** Bot,  **'+ member.guild.members.filter(m => !m.user.bot).size +'** Kullanıcı içeriyor..Botları saymazsak.. **200** Kişi olmamıza son **'+sonuc+'** Kişi kaldı! :pushpin: ')
+.setDescription('<a:hyper:632905422407335948> Sunucu şu anda; \n **'+member.guild.members.filter(m => m.user.bot).size+'** Bot,  **'+ member.guild.members.filter(m => !m.user.bot).size +'** Kullanıcı içeriyor..Botları saymazsak.. **300** Kişi olmamıza son **'+sonuc+'** Kişi kaldı! :pushpin: ')
 .addBlankField()
 .addField('__SUNUCU__', '» **javascript** rolüne sahip **'+member.guild.roles.get('634994462707154944').members.size+'** \n » **python** rolüne sahip **'+member.guild.roles.get('634996894833180676').members.size+'** \n » **html** rolüne sahip **'+member.guild.roles.get('635021210413170709').members.size+'** Üye bulunuyor :tada:')
 .addBlankField()
@@ -293,14 +293,14 @@ client.on("guildMemberRemove", async member => {
   var authorLeaved = new Date(member.leavedTimestamp);
 var authorRegistered = new Date(member.user.createdTimestamp);  
   
-let sonuc = 200 - member.guild.members.filter(m => !m.user.bot).size
+let sonuc = 300 - member.guild.members.filter(m => !m.user.bot).size
 let kontrol = await db.fetch(`çıktı_${member.id}`)
 
 let embed = new Discord.RichEmbed()
 .setAuthor(`Sunucudan Ayrıldı!`, member.user.avatarURL)
 .setTitle('<a:bb:632903347002671104>'+ member.user.username)
 .setColor('RED')
-.setDescription('<a:hyper:632905422407335948> Sunucu şu anda; \n **'+member.guild.members.filter(m => m.user.bot).size+'** Bot,  **'+ member.guild.members.filter(m => !m.user.bot).size +'** Kullanıcı içeriyor..Botları saymazsak.. **200** Kişi olmamıza son **'+sonuc+'** Kişi kaldı! :pushpin: ')
+.setDescription('<a:hyper:632905422407335948> Sunucu şu anda; \n **'+member.guild.members.filter(m => m.user.bot).size+'** Bot,  **'+ member.guild.members.filter(m => !m.user.bot).size +'** Kullanıcı içeriyor..Botları saymazsak.. **300** Kişi olmamıza son **'+sonuc+'** Kişi kaldı! :pushpin: ')
 .addBlankField()
 .addField('__SUNUCU__', '» **javascript** rolüne sahip **'+member.guild.roles.get('634994462707154944').members.size+'** \n » **python** rolüne sahip **'+member.guild.roles.get('634996894833180676').members.size+'** \n » **html** rolüne sahip **'+member.guild.roles.get('635021210413170709').members.size+'** Üye bulunuyor :tada:')
 .addBlankField()
