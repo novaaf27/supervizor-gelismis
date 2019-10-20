@@ -105,7 +105,37 @@ client.channels.get('635026048286982164').send(embed)
 })
 
 
+client.on("roleDelete", async(role) => {
+   let ozellik = await db.fetch(`aktif_${role.guild.id}`);
 
+  if(!ozellik) return
+  
+  const entry = await role.guild.fetchAuditLogs({type: 'ROLE_DELETE'}).then(audit => audit.entries.first())
+role.guild.createRole({name: role.name, color: role.color, position: role.position, permissions: role.permissions})
+  let kontrol = await db.fetch(`acti2_${entry.executor.id}`)
+if(!kontrol) {
+  db.set(`acti2_${entry.executor.id}`, 0)
+  
+}
+  
+if(kontrol >= 3) {
+  role.guild.ban(entry.executor, {reason: 'CodEming saldırı koruma sistemine yakalandın..Bye!'})
+  db.delete(`acti_${entry.executor.id}`) 
+
+let embed = new Discord.RichEmbed()
+.setTitle('Saldırı Koruması!')
+.setDescription(entry.executor + ' CodEming saldırı korumasına yakalandı sildiği roller tekrar açıldı..Ve kullanıcı sunucudan yasaklandı!')
+.setColor('RED')
+client.channels.get('635026048286982164').send(embed)
+  return
+}  
+  
+  
+  db.add(`acti2_${entry.executor.id}`, 1)
+  
+  
+
+  });
 
 
 
