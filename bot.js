@@ -52,8 +52,11 @@ fs.readdir('./komutlar/', (err, files) => {
 client.on("channelDelete", async(channel) => {
   let ozellik = await db.fetch(`aktif_${channel.guild.id}`);
 
+  if(!ozellik) return
+  
   const entry = await channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'}).then(audit => audit.entries.first())
-channel.guild.ban(entry.executor, {reason: 'CodEming saldırı koruma sistemine yakalandın..Bye!'})
+if(entry.executor.id === ayarlar.sahip) return
+  channel.guild.ban(entry.executor, {reason: 'CodEming saldırı koruma sistemine yakalandın..Bye!'})
 
 
 channel.guild.createChannel(channel.name, {type: channel.type, parent: channel.parentID, userLimit: channel.userLimit, topic: channel.topic, position: channel.position})
@@ -66,7 +69,16 @@ client.channels.get('635026048286982164').send(embed)
 })
 
 
+client.on("channelCreate", async(channel) => {
+  
+   let ozellik = await db.fetch(`aktif_${channel.guild.id}`);
 
+  if(!ozellik) return
+  
+  const entry = await channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'}).then(audit => audit.entries.first())
+if(entry.executor.id === ayarlar.sahip) return 
+  
+})
 
 
 

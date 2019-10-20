@@ -23,8 +23,9 @@ return
   .addField('Artık Aktif!:', '<a:basarl:626445944258560012> Webhook Koruması \n <a:basarl:626445944258560012> Ban Sınırı \n <a:basarl:626445944258560012> Kanal Silme Ban \n <a:basarl:626445944258560012> Kanal Açma Ban \n <a:basarl:626445944258560012> Spam Ban \n <a:basarl:626445944258560012> Sohbet Cooldown')
   .setColor('RED')
   message.channel.send(embed)   
-   return 
-db.set(`aktif_${message.guild.id}`, message.guild.id)
+db.set(`aktif_${message.guild.id}`, message.guild.id)   
+    return 
+
   }
   let embed = new Discord.RichEmbed()
   .setDescription('Bir durum belirtmelisin.Örnek `c!saldırı açık` veya `c!saldırı kapalı`')
