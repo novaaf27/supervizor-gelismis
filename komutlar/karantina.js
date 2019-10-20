@@ -7,24 +7,27 @@ exports.run = (client, message, args) => {
   .setTitle(':uyar: Acil Durum Koruması Devre Dışı!')
   .setDescription('Acil Durum ayarları devre dışı bırakıldı.Bu durum saldırı anında engel koymayacaktır.')
   .addBlankField()
-  .addField('Artık Devredışı:', '<a:iptal:626445972620443648> Webhook Koruması \n <a:iptal:626445972620443648> Ban Sınırı \n <a:iptal:626445972620443648> Kanal Silme Ban \n <a:iptal:626445972620443648> Kanal Açma Ban \n <a:iptal:626445972620443648> Spam Ban \n <a:iptal:626445972620443648> Sohbet Cooldown')
+  .addField('Artık Devre Dışı..!:', '<a:iptal:626445972620443648> Webhook Koruması \n <a:iptal:626445972620443648> Ban Sınırı \n <a:iptal:626445972620443648> Kanal Silme Ban \n <a:iptal:626445972620443648> Kanal Açma Ban \n <a:iptal:626445972620443648> Kanal Silme Ban \n <a:iptal:626445972620443648> Kanal Koruması \n <a:iptal:626445972620443648> Rol Silme Ban \n <a:iptal:626445972620443648> Rol Koruması \n <a:iptal:626445972620443648> Spam Ban \n <a:iptal:626445972620443648> Sohbet Cooldown')
   .setColor('RED')
   message.channel.send(embed)
- let channel = client.channels.get("635020711911620618"); 
+ let channel = client.channels.get("635401560964202497"); 
+channel.setName('Saldırı Koruması: ⚠️')
    db.delete(`aktif_${message.guild.id}`)
 return
 
  }
-  
+  //<a:iptal:626445972620443648>
   if(args[0] === "açık") {
    let embed = new Discord.RichEmbed()
   .setTitle('<a:verifed:633993795066658832> Acil Durum Koruması Aktif!')
   .setDescription('Acil Durum Devreye Alındı!..Sunucu koruma moduna alınıyor..')
   .addBlankField()
-  .addField('Artık Aktif!:', '<a:basarl:626445944258560012> Webhook Koruması \n <a:basarl:626445944258560012> Ban Sınırı \n <a:basarl:626445944258560012> Kanal Silme Ban \n <a:basarl:626445944258560012> Kanal Açma Ban \n <a:basarl:626445944258560012> Spam Ban \n <a:basarl:626445944258560012> Sohbet Cooldown')
+  .addField('Artık Aktif!:', '<a:basarl:626445944258560012> Webhook Koruması \n <a:basarl:626445944258560012> Ban Sınırı \n <a:basarl:626445944258560012> Kanal Silme Ban \n <a:basarl:626445944258560012> Kanal Açma Ban \n <a:basarl:626445944258560012> Kanal Silme Ban \n <a:basarl:626445944258560012> Kanal Koruması \n <a:basarl:626445944258560012> Rol Silme Ban \n <a:basarl:626445944258560012> Rol Koruması \n <a:basarl:626445944258560012> Spam Ban \n <a:basarl:626445944258560012> Sohbet Cooldown')
   .setColor('RED')
   message.channel.send(embed)   
 db.set(`aktif_${message.guild.id}`, message.guild.id)   
+ let channel = client.channels.get("635401560964202497"); 
+    channel.setName('Saldırı Koruması: ✔')
     return 
 
   }
