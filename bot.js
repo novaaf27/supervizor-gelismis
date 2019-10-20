@@ -50,7 +50,7 @@ fs.readdir('./komutlar/', (err, files) => {
 
 
 client.on("channelDelete", async(channel) => {
-  let ozellik = await db.fetch(`kanalsileneban_${channel.guild.id}`);
+  let ozellik = await db.fetch(`aktif_${channel.guild.id}`);
   if(!ozellik) return
   const entry = await channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'}).then(audit => audit.entries.first())
 channel.guild.ban(entry.executor, {reason: 'CodEming saldırı koruma sistemine yakalandın..Bye!'})
@@ -61,6 +61,7 @@ channel.guild.createChannel(channel.name, {type: channel.type, parent: channel.p
 let embed = new Discord.RichEmbed()
 .setTitle('Saldırı Koruması!')
 .setDescription(entry.executor + ' CodEming saldırı korumasına yakalandı sildiği kanal tekrar açıldı..V kullanıcı sunucudan yasaklandı!')
+.setColor('RED')
 client.channels.get('635026048286982164').send(embed)
 })
 
