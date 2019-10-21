@@ -1,8 +1,14 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
-exports.run = (client, message, args) => { 
+exports.run = async(client, message, args) => { 
   
+  let kontrol = new Discord.RichEmbed()
+  .setTitle('<a:google:635846373052383243> Yetnkiniz Kontrol Ediliyor')
+  .setDescription('Sunucu veri tabanında yetkiniz kontrol ediliyor lütfen bekleyiniz..')
   
+message.channel.send(kontrol).then(x => {
+
+})
   
   };
 exports.conf = {
