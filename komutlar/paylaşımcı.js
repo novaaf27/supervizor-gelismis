@@ -17,7 +17,7 @@ exports.run = async(client, message, args) => {
   
   let user = message.mentions.users.first()
  if(!user) return message.channel.send('Lütfen bir kullanıcı belirt.')
-  let kontrol3 = await db.fetch(`paylasimci_${user}`, user.id)   
+  let kontrol3 = await db.fetch(`paylasimci_${message.guild.id}`, user.id)   
 
   
   let kontrol = new Discord.RichEmbed()
@@ -42,7 +42,7 @@ return
   .setDescription('Sunucu Veri Tabanında paylaşımcı Silebilmeniz için gerekli izinleri buldum.. '+user+' in veri tabanından kod paylaşım yetkisini siliyorum.')
   .setColor('GREEN')
     x.edit(kontrol22)        
-   db.delete(`paylasimci_${user}`, user.id)
+   db.delete(`paylasimci_${message.guild.id}`, user.id)
     return
   }
    
@@ -54,7 +54,7 @@ return
   .setColor('GREEN')
     x.edit(kontrol2)   
  
-   db.set(`paylasimci_${user}`, user.id) 
+   db.set(`paylasimci_${message.guild.id}`, user.id) 
    
  }, 10000)
 })

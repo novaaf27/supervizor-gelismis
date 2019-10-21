@@ -3,7 +3,7 @@ const db = require('quick.db')
 const talkedRecently = new Set();
 exports.run = async(client, message, args) => { 
  
-  let kontrol3 = await db.fetch(`paylasimci_${message.member.id}`)   
+  let kontrol3 = await db.fetch(`paylasimci_${message.guild.id}`, message.member.id)   
   let kanal = await db.fetch(`kanalismi_${message.member.id}`)
   
   
@@ -30,7 +30,7 @@ if(!kontrol3) {
   
     let kontrol = new Discord.RichEmbed()
   .setTitle('<a:iptal:626445972620443648> Yetki Hatası')
-  .setDescription('Sunucu Veri Tabanında paylaşımcı eklebilmeyeniz için gerekli iznininizi bulamadım.')
+  .setDescription('Sunucu Veri Tabanında kod paylaşabilmeniz için gerekli iznininizi bulamadım.')
   .setColor('RED')
     x.edit(kontrol) 
 return
@@ -45,7 +45,9 @@ return
     x.edit(kontrol2)   
 
    
- }, 10000)
+ }, 10000).then
+   
+ 
 
 
   
@@ -54,8 +56,8 @@ return
   .setTitle('Kanal İsmi')
   .setDescription('Lütfen oluşturulacak kanal ismini bulunduğunuz kanala atın.')
   .setColor('GREEN')
-  
-   message.channel.awaitMessages.then(b => {
+  message.channel.send(isim)
+   message.channel.awaitMessages(b => {
     
 db.set(`kanalismi_${message.member.id}`, b.content)
   
@@ -69,7 +71,7 @@ db.set(`kanalismi_${message.member.id}`, b.content)
 message.channel.send(katagori)
 
   
-  message.channel.awaitMessages.then(a => {
+  message.channel.awaitMessages(a => {
     
   
     if(a.content === '1') {
