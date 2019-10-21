@@ -16,8 +16,16 @@ if(message.author.id !== "598176001037565960") {
   .setDescription('Sunucu Veri Tabanında paylaşımcı eklebilmeyeniz için gerekli iznininizi bulamadım.')
   .setColor('RED')
     x.edit(kontrol) 
+return
 }
-    }, 10000)
+      let kontrol2 = new Discord.RichEmbed()
+  .setTitle('<a:iptal:626445972620443648> Yetki Hatası')
+  .setDescription('Sunucu Veri Tabanında paylaşımcı eklebilmeyeniz için gerekli iznininizi bulamadım.')
+  .setColor('RED')
+    x.edit(kontrol2)   
+ 
+ 
+ }, 10000)
 })
   
   };
