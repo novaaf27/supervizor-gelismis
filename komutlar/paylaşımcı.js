@@ -4,8 +4,10 @@ const talkedRecently = new Set();
 exports.run = async(client, message, args) => { 
   
      if (talkedRecently.has(message.author.id)) {
-     return message.channel.send('Cooldowna yakalandın!');
-    } else {
+      message.delete();
+       return message.channel.send('Cooldowna yakalandın!');
+ 
+     } else {
 
         talkedRecently.add(message.author.id);
         setTimeout(() => {
