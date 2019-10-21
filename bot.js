@@ -211,7 +211,9 @@ client.on('messageDelete', async msg => {
 
 
 client.on('messageUpdate', async (oldMessage, newMessage) => {
- if (oldMessage.author.bot) {
+ if(oldMessage.channel.id == '635032282134085654') return
+  if(oldMessage.channel.id == '635032339180814346') return 
+  if (oldMessage.author.bot) {
         return false;
     }
 
