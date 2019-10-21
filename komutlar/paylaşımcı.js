@@ -39,9 +39,19 @@ return
   .setColor('GREEN')
     x.edit(kontrol2)   
  
- 
+ let user = message.mentions.users.first()
+ if(!user) return message.channel.send('Lütfen bir kullanıcı belirt.')
+   
+   db.set()
+   
  }, 10000)
 })
+
+  
+  
+  
+  
+  
   
   };
 exports.conf = {
