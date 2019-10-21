@@ -65,23 +65,34 @@ let kanal1 =  message.guild.channels.find(channel => channel.id === "63554091476
  
   
     if(sayı == '1') {
-  message.guild.createChannel(kanal, {parent: message.guild.category.find(channel => channel.id == "635540914764382218"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+
+      message.guild.createChannel(kanal, 'text')
+     .then(channel =>
+      channel.setParent(message.guild.channels.find(channel => channel.name === "js s+")));
       
     }
     if(sayı == '2') {
-  message.guild.createChannel(kanal, {parent: message.guild.category.find(channel => channel.id == "634388026738343968"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+      message.guild.createChannel(kanal, 'text')
+     .then(channel =>
+      channel.setParent(message.guild.channels.find(channel => channel.name === "js (+)")));
       
     }
   if(sayı == '3') {
-  message.guild.createChannel(kanal, {parent: message.guild.category.find(channel => channel.id == "635029835697225739"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+      message.guild.createChannel(kanal, 'text')
+     .then(channel =>
+      channel.setParent(message.guild.channels.find(channel => channel.name === "kod paylaşımları")));
       
     }   
    if(sayı == '4') {
-  message.guild.createChannel(kanal, {parent: message.guild.category.find(channel => channel.id == "622484487389052968"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+      message.guild.createChannel(kanal, 'text')
+     .then(channel =>
+      channel.setParent(message.guild.channels.find(channel => channel.name === "bot , alt yapı")));
       
     }    
    if(sayı == '5') {
-  message.guild.createChannel(kanal, {parent: message.guild.category.find(channel => channel.id == "631560935156482058"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+      message.guild.createChannel(kanal, 'text')
+     .then(channel =>
+      channel.setParent(message.guild.channels.find(channel => channel.name === "html paylaşımları")));
       
     }    
   })
