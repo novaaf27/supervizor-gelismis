@@ -194,6 +194,8 @@ client.on('guildMemberAdd',async member => {
 
 client.on('messageDelete', async msg => {
 	  if(msg.content.startsWith(prefix)) return;
+  if(msg.channel.id == '635032282134085654') return
+  if(msg.channel.id == '635032339180814346') return 
   if(msg.author.bot) return;
   if (!msg.guild) return;
   

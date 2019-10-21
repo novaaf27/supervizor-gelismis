@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const db = require('quick.db')
 const talkedRecently = new Set();
 exports.run = async(client, message, args) => { 
-  
+let kontrol = await db.fetch()  
      if (talkedRecently.has(message.author.id)) {
       message.delete();
        return message.channel.send('Cooldowna yakalandın!');
@@ -16,6 +16,10 @@ exports.run = async(client, message, args) => {
         }, 15000);
     }
   
+  let user = message.mentions.users.first()
+ if(!user) return message.channel.send('Lütfen bir kullanıcı belirt.')
+   
+
   
   let kontrol = new Discord.RichEmbed()
   .setTitle('<a:google:635846373052383243> Yetkiniz Kontrol Ediliyor')
@@ -24,7 +28,7 @@ exports.run = async(client, message, args) => {
   
 message.channel.send(kontrol).then(x => {
  setTimeout(() => {
-if(message.author.id !== "598176001037565960") {
+if(message.author.id !== "419214688061227009") {
   
     let kontrol = new Discord.RichEmbed()
   .setTitle('<a:iptal:626445972620443648> Yetki Hatası')
@@ -35,14 +39,11 @@ return
 }
       let kontrol2 = new Discord.RichEmbed()
   .setTitle('<a:basarl:626445944258560012> Yetki Kontrolü')
-  .setDescription('Sunucu Veri Tabanında paylaşımcı eklebilmeyeniz için gerekli izinleri buldum.. İşleme devam edebilirsiniz.')
+  .setDescription('Sunucu Veri Tabanında paylaşımcı eklebilmeyeniz için gerekli izinleri buldum.. '+user+' Artık bir paylaşımcı, kod paylaşabilir!')
   .setColor('GREEN')
     x.edit(kontrol2)   
  
- let user = message.mentions.users.first()
- if(!user) return message.channel.send('Lütfen bir kullanıcı belirt.')
-   
-   db.set()
+   db.set(`paylasimci_${user}`, user.id) 
    
  }, 10000)
 })
