@@ -73,9 +73,25 @@ message.channel.send(katagori)
     
   
     if(a.content === '1') {
-  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.name === ""), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.id === "635540914764382218"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
       
     }
+    if(a.content === '2') {
+  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.id === "634388026738343968"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+      
+    }
+  if(a.content === '3') {
+  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.id === "635029835697225739"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+      
+    }   
+   if(a.content === '4') {
+  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.id === "622484487389052968"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+      
+    }    
+   if(a.content === '5') {
+  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.id === "631560935156482058"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+      
+    }    
   })
 
 })
@@ -83,12 +99,12 @@ message.channel.send(katagori)
 exports.conf = {
   enabled: true,  
   guildOnly: false, 
-  aliases: [], 
+  aliases: ['paylaş'], 
   permLevel: 0
 };
 
 exports.help = {
-  name: 'taslak',
+  name: 'paylaş',
   description: 'taslak', 
-  usage: 'taslak'
+  usage: 'payşal'
 };
