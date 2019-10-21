@@ -47,13 +47,33 @@ return
    
  }, 10000)
 
-let katagori = new Discord.Rich.Embed()
+
+  
+  
+  let isim = new Discord.RichEmbed()
+  .setTitle('Kanal İsmi')
+  .setDescription('Lütfen oluşturulacak kanal ismini bulunduğunuz kanala atın.')
+  .setColor('GREEN')
+  
+  
+  
+  
+  let katagori = new Discord.Rich.Embed()
 .setTitle('Katagori Seçimi')
-.setDescription('Lütfen aşağıdaki numaralara göre kod açmak istediğiniz kanalın numarasını bulunduğunuz kanala gönderin.')
+.setColor('GREEN')
+  .setDescription('Lütfen aşağıdaki numaralara göre kod açmak istediğiniz kanalın numarasını bulunduğunuz kanala gönderin.')
 .addBlankField()
 .addField('Katagoriler:', '**1** => **javascript (s+)** \n **2** => **javascript (+)** \n **3** => **kod paylaşımları** \n **4** => bot, alt yapı** \n **5** => **html paylaşımları**')
+message.channel.send(katagori)
 
-
+  
+  message.channel.awaitMessages.then(a => {
+    
+    if(a.content === '1') {
+      
+      
+    }
+  })
 
 })
   };
