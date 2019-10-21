@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const db = require('quick.db')
 const talkedRecently = new Set();
 exports.run = async(client, message, args) => { 
-let kontrol = await db.fetch()  
+
      if (talkedRecently.has(message.author.id)) {
       message.delete();
        return message.channel.send('Cooldowna yakalandın!');
@@ -11,14 +11,13 @@ let kontrol = await db.fetch()
 
         talkedRecently.add(message.author.id);
         setTimeout(() => {
-        message.delete();
           talkedRecently.delete(message.author.id);
         }, 15000);
     }
   
   let user = message.mentions.users.first()
  if(!user) return message.channel.send('Lütfen bir kullanıcı belirt.')
-   
+  let kontrol3 = await db.fetch(`paylasimci_${user}`, user.id)   
 
   
   let kontrol = new Discord.RichEmbed()
@@ -37,7 +36,19 @@ if(message.author.id !== "419214688061227009") {
     x.edit(kontrol) 
 return
 }
-      let kontrol2 = new Discord.RichEmbed()
+  if(kontrol3) {
+     let kontrol22 = new Discord.RichEmbed()
+  .setTitle('<a:basarl:626445944258560012> Yetki Kontrolü')
+  .setDescription('Sunucu Veri Tabanında paylaşımcı Silebilmeniz için gerekli izinleri buldum.. '+user+' in veri tabanından kod paylaşım yetkisini siliyorum.')
+  .setColor('GREEN')
+    x.edit(kontrol22)        
+   db.delete(`paylasimci_${user}`, user.id)
+    return
+  }
+   
+   
+   
+   let kontrol2 = new Discord.RichEmbed()
   .setTitle('<a:basarl:626445944258560012> Yetki Kontrolü')
   .setDescription('Sunucu Veri Tabanında paylaşımcı eklebilmeyeniz için gerekli izinleri buldum.. '+user+' Artık bir paylaşımcı, kod paylaşabilir!')
   .setColor('GREEN')
