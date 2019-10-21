@@ -4,7 +4,7 @@ const talkedRecently = new Set();
 exports.run = async(client, message, args) => { 
  
   let kontrol3 = await db.fetch(`paylasimci_${message.member.id}`)   
-  
+  let kanal = await db.fetch(`kanalismi_${message.member.id}`)
   
   
        if (talkedRecently.has(message.author.id)) {
@@ -55,9 +55,11 @@ return
   .setDescription('Lütfen oluşturulacak kanal ismini bulunduğunuz kanala atın.')
   .setColor('GREEN')
   
+   message.channel.awaitMessages.then(b => {
+    
+db.set(`kanalismi_${message.member.id}`, b.content)
   
-  
-  
+   }) 
   let katagori = new Discord.Rich.Embed()
 .setTitle('Katagori Seçimi')
 .setColor('GREEN')
@@ -69,8 +71,9 @@ message.channel.send(katagori)
   
   message.channel.awaitMessages.then(a => {
     
+  
     if(a.content === '1') {
-      
+  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.name === ""), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
       
     }
   })
