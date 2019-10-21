@@ -4,11 +4,13 @@ const talkedRecently = new Set();
 exports.run = async(client, message, args) => { 
  
   let kontrol3 = await db.fetch(`paylasimci_${message.guild.id}`, message.member.id)   
-  let kanal = await db.fetch(`kanalismi_${message.member.id}`)
-  
+  let kanal = args[0]
+  let sayı = args[1]
   
        if (talkedRecently.has(message.author.id)) {
-      message.delete();
+    
+         
+         message.delete();
        return message.channel.send('Bu komut güvenlik nedeniyle saate 1 kullanılabilir.');
  
      } else {
@@ -19,6 +21,16 @@ exports.run = async(client, message, args) => {
         }, 7200000);
     }
   
+  if(!kanal) return message.channel.send('Lütfen kurulacak kanalın,kodun ismini belirtin.')
+ 
+   let katagori = new Discord.RichEmbed()
+.setTitle('Katagori Seçimi')
+.setColor('GREEN')
+  .setDescription('Lütfen aşağıdaki numaralara göre kod açmak istediğiniz kanalın numarasını yazınız. \n Örnek kullanım ````c!paylaş afk-kodu 3```')
+.addBlankField()
+.addField('Katagoriler:', '**1** => **javascript (s+)** \n **2** => **javascript (+)** \n **3** => **kod paylaşımları** \n **4** => bot, alt yapı** \n **5** => **html paylaşımları**')
+   
+  if(!sayı) return message.channel.send(katagori)
     let kontrol = new Discord.RichEmbed()
   .setTitle('<a:google:635846373052383243> Yetkiniz Kontrol Ediliyor')
   .setColor('BLUE')
@@ -40,7 +52,7 @@ return
    
    let kontrol2 = new Discord.RichEmbed()
   .setTitle('<a:basarl:626445944258560012> Yetki Kontrolü')
-  .setDescription('Yetki onaylandı! Lütfen botun sizden isteklerini gerçekleştirerek kod paylaşacağınız kanalı açın..')
+  .setDescription('Yetki onaylandı! '+kanal+' Adlı kanalı kurdum lütfen içine girip paylaşımınızı yapınız eğer içi boş kalırsa,3 saat içinde sileceğim.')
   .setColor('GREEN')
     x.edit(kontrol2)   
 
@@ -49,54 +61,31 @@ return
    
  
 
-
+let kanal1 =  message.guild.channels.find(channel => channel.id === "635540914764382218")
+ 
   
-  
-  let isim = new Discord.RichEmbed()
-  .setTitle('Kanal İsmi')
-  .setDescription('Lütfen oluşturulacak kanal ismini bulunduğunuz kanala atın.')
-  .setColor('GREEN')
-  message.channel.send(isim)
-   message.channel.awaitMessages(b => {
-    
-db.set(`kanalismi_${message.member.id}`, b.content)
-  
-   }) 
-  let katagori = new Discord.Rich.Embed()
-.setTitle('Katagori Seçimi')
-.setColor('GREEN')
-  .setDescription('Lütfen aşağıdaki numaralara göre kod açmak istediğiniz kanalın numarasını bulunduğunuz kanala gönderin.')
-.addBlankField()
-.addField('Katagoriler:', '**1** => **javascript (s+)** \n **2** => **javascript (+)** \n **3** => **kod paylaşımları** \n **4** => bot, alt yapı** \n **5** => **html paylaşımları**')
-message.channel.send(katagori)
-
-  
-  message.channel.awaitMessages(a => {
-    
-  
-    if(a.content === '1') {
-  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.id === "635540914764382218"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+    if(sayı == '1') {
+  message.guild.createChannel(kanal, {parent: message.guild.category.find(channel => channel.id == "635540914764382218"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
       
     }
-    if(a.content === '2') {
-  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.id === "634388026738343968"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+    if(sayı == '2') {
+  message.guild.createChannel(kanal, {parent: message.guild.category.find(channel => channel.id == "634388026738343968"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
       
     }
-  if(a.content === '3') {
-  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.id === "635029835697225739"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+  if(sayı == '3') {
+  message.guild.createChannel(kanal, {parent: message.guild.category.find(channel => channel.id == "635029835697225739"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
       
     }   
-   if(a.content === '4') {
-  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.id === "622484487389052968"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+   if(sayı == '4') {
+  message.guild.createChannel(kanal, {parent: message.guild.category.find(channel => channel.id == "622484487389052968"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
       
     }    
-   if(a.content === '5') {
-  message.guild.createChannel(kanal, {parent: message.guild.channels.find(channel => channel.id === "631560935156482058"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
+   if(sayı == '5') {
+  message.guild.createChannel(kanal, {parent: message.guild.category.find(channel => channel.id == "631560935156482058"), topic: message.member.user.username +' adlı kullanıcının paylaştığı '+kanal+' adlı kodu.'})    
       
     }    
   })
 
-})
   };
 exports.conf = {
   enabled: true,  
