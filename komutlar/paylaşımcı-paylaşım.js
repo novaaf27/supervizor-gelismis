@@ -61,39 +61,59 @@ return
    
  
 
-let kanal1 =  message.guild.channels.find(channel => channel.id === "635540914764382218")
+
  
   
     if(sayı == '1') {
-
-      message.guild.createChannel(kanal, 'text')
-     .then(channel =>
-      channel.setParent(message.guild.channels.find(channel => channel.name === "js s+")));
-      
+      message.guild.createChannel(kanal, "text").then(c => {
+      const category = message.guild.channels.find('name', 'js s+')
+      c.setParent(category)
+           c.overwritePermissions(message.author, {
+          SEND_MESSAGES: true,
+          READ_MESSAGES: true
+      });   
+      })
     }
     if(sayı == '2') {
-      message.guild.createChannel(kanal, 'text')
-     .then(channel =>
-      channel.setParent(message.guild.channels.find(channel => channel.name === "js (+)")));
-      
+      message.guild.createChannel(kanal, "text").then(c => {
+      const category = message.guild.channels.find('name', 'js (+)')
+      c.setParent(category)
+           c.overwritePermissions(message.author, {
+          SEND_MESSAGES: true,
+          READ_MESSAGES: true
+      });   
+      }) 
     }
   if(sayı == '3') {
-      message.guild.createChannel(kanal, 'text')
-     .then(channel =>
-      channel.setParent(message.guild.channels.find(channel => channel.name === "kod paylaşımları")));
-      
+      message.guild.createChannel(kanal, "text").then(c => {
+      const category = message.guild.channels.find('name', 'kod paylaşımları')
+      c.setParent(category)
+           c.overwritePermissions(message.author, {
+          SEND_MESSAGES: true,
+          READ_MESSAGES: true
+      });   
+      })
+
     }   
    if(sayı == '4') {
-      message.guild.createChannel(kanal, 'text')
-     .then(channel =>
-      channel.setParent(message.guild.channels.find(channel => channel.name === "bot , alt yapı")));
-      
+      message.guild.createChannel(kanal, "text").then(c => {
+      const category = message.guild.channels.find('name', 'bot , alt yapı')
+      c.setParent(category)
+           c.overwritePermissions(message.author, {
+          SEND_MESSAGES: true,
+          READ_MESSAGES: true
+      });   
+      })  
     }    
    if(sayı == '5') {
-      message.guild.createChannel(kanal, 'text')
-     .then(channel =>
-      channel.setParent(message.guild.channels.find(channel => channel.name === "html paylaşımları")));
-      
+      message.guild.createChannel(kanal, "text").then(c => {
+      const category = message.guild.channels.find('name', 'html paylaşımları')
+      c.setParent(category)
+           c.overwritePermissions(message.author, {
+          SEND_MESSAGES: true,
+          READ_MESSAGES: true
+      });   
+      }) 
     }    
   })
 
