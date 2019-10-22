@@ -146,8 +146,15 @@ client.channels.get('635026048286982164').send(embed)
 
 
 
-client.on('message', msg => {
+client.on('message', async msg => {
+    let ozellik = await db.fetch(`kurucu_${msg.guild.id}`);
+
+  if(!ozellik) return
   
+ if(msg.includes === '<@${client.user.id}>') {
+   
+   
+ }
   
 });
 
