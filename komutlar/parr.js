@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => { 
 if (!message.member.roles.has('635036855733321748')) return message.reply('Sadece partner yetkilileri,Partner ekleyebilir.') 
-  if (message.channel.name !== '➡│test-1') {
+  if (message.channel.name !== '📄│partner-yollama') {
 
 var embed = new Discord.RichEmbed()
 .setAuthor(`${client.user.username} Hata! `,message.author.avatarURL)
