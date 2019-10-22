@@ -151,7 +151,7 @@ client.on('message', async msg => {
 
   if(!ozellik) return
   
- if (msg.content.toLowerCase() === '<@419214688061227009>') {
+ if (msg.includes('<@419214688061227009>')) {
   
    let uyarı = await db.fetch(`kuyari_${msg.member.id}`)
    
@@ -165,10 +165,10 @@ client.on('message', async msg => {
 if(!uyarı) {
   db.set(`kuyari_${msg.member.id}`, 0)
 }
-  db.add(`kuyari_${msg.member.id}`, 1)  
+ 
   
  }
- 
+  db.add(`kuyari_${msg.member.id}`, 1)  
   if(uyarı == '3') {
   let embed = new Discord.RichEmbed()
   .setTitle('Bu olamaz...')
@@ -182,7 +182,7 @@ if(!uyarı) {
    
  
   
-};
+}
 });
 
 
