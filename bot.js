@@ -151,10 +151,32 @@ client.on('message', async msg => {
 
   if(!ozellik) return
   
- if(msg.includes === '<@${client.user.id}>') {
+ if(msg.includes === '<@${419214688061227009}>') {
+  
+   let uyarı = await db.fetch(`kuyari_${msg.member.id}`)
    
+  if(!uyarı) { 
+  let embed = new Discord.RichEmbed()
+  .setTitle('Bu olamaz...')
+  .setDescription('Sanırsam yasini etiketlemişsin..Ama şu an o etiketlenmek istemiyor.Bu durum seni uyarmamı istediği anlamına geliyor..! Bu senin ilk uyarın **3/1**')
+ msg.channel.send(embed)
+  
+  db.set(`kuyari_${msg.member.id}`, 0)
+  db.add(`kuyari_${msg.member.id}`, 1)  
+  
+  }
+  if(uyarı == '2') {
+  let embed = new Discord.RichEmbed()
+  .setTitle('Bu olamaz...')
+  .setDescription('Sanırsam yasini etiketlemişsin..Ama şu an o etiketlenmek istemiyor.Bu durum seni uyarmamı istediği anlamına geliyor..! Bu senin ilk uyarın **3/1**')
+ msg.channel.send(embed)
+  
+  db.set(`kuyari_${msg.member.id}`, 0)
+  db.add(`kuyari_${msg.member.id}`, 1)  
+     
+  } 
    
- }
+  }
   
 });
 
