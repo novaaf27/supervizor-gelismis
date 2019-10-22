@@ -151,7 +151,7 @@ client.on('message', async msg => {
 
   if(!ozellik) return
   
- if(msg.includes('<@${419214688061227009}>')) {
+ if (msg.content.toLowerCase() === '<@419214688061227009>') {
   
    let uyarı = await db.fetch(`kuyari_${msg.member.id}`)
    
@@ -159,23 +159,15 @@ client.on('message', async msg => {
   let embed = new Discord.RichEmbed()
   .setTitle('Bu olamaz...')
   .setColor('RED')
-  .setDescription('Sanırsam yasini etiketlemişsin..Ama şu an o etiketlenmek istemiyor.Bu durum seni uyarmamı istediği anlamına geliyor..! Bu senin ilk uyarın **3/1**')
+  .setDescription('Sanırsam yasini etiketlemişsin..Ama şu an o etiketlenmek istemiyor.Bu durum seni uyarmamı istediği anlamına geliyor..! devam etmeye sakın kalkma!')
  msg.channel.send(embed)
   
+if(!uyarı) {
   db.set(`kuyari_${msg.member.id}`, 0)
+}
   db.add(`kuyari_${msg.member.id}`, 1)  
   
-  }
-  if(uyarı == '2') {
-  let embed = new Discord.RichEmbed()
-  .setTitle('Bu olamaz...')
-  .setColor('RED')
-  .setDescription('Sanırsam yasini etiketlemişsin..Ama şu an o etiketlenmek istemiyor.Bu durum seni uyarmamı istediği anlamına geliyor..! Bu senin ikinci uyarın **3/2**')
- msg.channel.send(embed)
-  
-  db.add(`kuyari_${msg.member.id}`, 1)  
-     
-  } 
+ }
  
   if(uyarı == '3') {
   let embed = new Discord.RichEmbed()
@@ -186,12 +178,12 @@ client.on('message', async msg => {
   
   db.delete(`kuyari_${msg.member.id}`)  
      msg.member.removeRole('634994577140613151')
-  }    
+  }   
    
-  }
+ 
   
+};
 });
-
 
 
 client.on('guildMemberAdd',async member => {
