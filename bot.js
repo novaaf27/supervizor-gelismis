@@ -146,8 +146,10 @@ client.channels.get('635026048286982164').send(embed)
 
 
 
-
-
+client.on('message', msg => {
+  
+  
+});
 
 
 
