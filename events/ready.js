@@ -2,9 +2,6 @@ const chalk = require('chalk');
 const moment = require('moment');
 const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
-const db = require('quick.db');
-
-var yazı = db.fetch(`oynuyor_`, yazı) 
 
 module.exports = client => {
 
@@ -13,10 +10,7 @@ module.exports = client => {
   client.user.setStatus("online");
    var oyun = [
 
-        "Tüm Komutları görmek için: c!yardım",
-         "CodEming..",
-         "Kodları Görmek için: c!js",
-         "Süper komutlar yakında!"  
+        "Boş Alt Yapı!"
      
      
 

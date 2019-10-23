@@ -1,0 +1,1 @@
+Bu alt yapı tamamiyle CodEming sunucusuna, Yasin kullanıcısına aittir paylaşılması yasaktır.
