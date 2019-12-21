@@ -22,7 +22,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://boşyapı.glitch.me/`);
+  http.get(`http://swerve-register.glitch.me/`);
 }, 10000);
 ///////////
 
