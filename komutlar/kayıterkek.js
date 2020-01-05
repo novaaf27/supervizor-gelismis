@@ -14,7 +14,7 @@ exports.run = async (client, message, args) => {
 
 const codeplus = new Discord.RichEmbed()
         .setTitle(`<a:aahg:652151800765612033> **Sunucuya Hoşgeldiniz** <a:emoji_33:619891578370261013>`)
-        .setDescription(`<a:Verified:652589540808196136> ${member}, **Kaydınız Başarıyla Gerçekleşti! İyi Eğlenceler.**`)
+        .setDescription(`${member}, **Kaydınız Başarıyla Gerçekleşti! İyi Eğlenceler.**`)
         .setColor('00000')
         .setTimestamp()
         message.channel.send(codeplus)

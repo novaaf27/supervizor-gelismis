@@ -19,7 +19,7 @@ message.guild.member(user.id).setNickname(isim)
 
 const codeplus = new Discord.RichEmbed()
         .setTitle(`**Sunucuya Hoşgeldiniz**`)
-        .setDescription(`<a:Verified:652589540808196136> ${user}, **İsminiz Başarıyla Kaydedildi! İyi Eğlenceler.** `)
+        .setDescription(`${user}, **İsminiz Başarıyla Kaydedildi! İyi Eğlenceler.** `)
         .setColor('00000')
         .setTimestamp()
         message.channel.send(codeplus)
