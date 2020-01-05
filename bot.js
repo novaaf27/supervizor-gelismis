@@ -80,3 +80,25 @@ client.elevation = message => {
 client.login(ayarlar.token);
 
 /////////////////////////////////////
+///////////////////////////////////////////////////
+
+client.on("userUpdate", async(old, nev) => {
+let emingSunucu = "590108657065132032" //Sunucu ID
+let emingKanal = "651121702444728344" //BILGI KANAL ID
+let emingRol = "610240016031023104" //ROL ID
+let emingTag = "⍫" //TAG 
+if(old.username !== nev.username) {
+  
+if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.get(nev.id).roles.has(emingRol)) {
+      client.channels.get(emingKanal).send(`<a:emoji_33:619891578370261013> **${nev}, İsmine \`${emingTag}\` eklediği için Tag rolünü kazandı.** <a:emoji_33:619891578370261013>`) 
+      client.guilds.get(emingSunucu).members.get(nev.id).addRole(emingRol)
+     }
+  if(!nev.username.includes(emingTag) && client.guilds.get(emingSunucu).members.get(nev.id).roles.has(emingRol)) {
+     client.guilds.get(emingSunucu).members.get(nev.id).removeRole(emingRol)
+     client.channels.get(emingKanal).send(`:anger: **${nev}, İsminden \`${emingTag}\`'ı çıkardığı için Tag rolünü kaybetti.**`)
+    } 
+     
+  }
+  });
+
+///////////////////////////////////////////////////
