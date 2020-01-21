@@ -12,7 +12,9 @@ exports.run = (client, message, args) => {
   
   if(!isim) return message.channel.send(user + ' Adlı kullanıcıya belirlenecek ismi belirtmen gerekiyor.')
   
-message.guild.member(user.id).setNickname(eming+isim)
+  message.guild.member(user.id).setNickname(eming+isim)
+  message.guild.member(user.id).setNickname(eming+isim)
+  message.guild.member(user.id).setNickname(eming+isim)
 
 const codeplus = new Discord.RichEmbed()
         .setTitle(`**Sunucuya Hoşgeldiniz**`)
