@@ -3,7 +3,7 @@ const db = require('quick.db')
 exports.run = (client, message, args) => { 
   
   if (!message.guild.member(message.member.id).roles.has('608248510827069462')) 
-  return message.reply('Bu komutu kullanamazsın **📞Teyit Sorumlusu** rolü yok.')
+  return message.reply('Bu komutu kullanamazsın **📞Teyit Sorumlusu** değilsin.')
   
   let user = message.mentions.users.first() || message.guild.members.get(args[0])
   let isim = args.slice(1).join(' ');
@@ -20,7 +20,9 @@ const embed = new Discord.RichEmbed()
                   .setDescription("İsim Değiştirme Başarılı <:evet:663273663730286612>")
                   .setColor("GREEN")
                   .addField(":star: Yetkili", message.author)
+                  .setTimestamp()
                   .addField(":star: İsmi Değiştilen Üye", user)
+                  .setTimestamp()
                   .addField(":star: Yeni İsmi", eming+isim)
         message.channel.send(embed)
 

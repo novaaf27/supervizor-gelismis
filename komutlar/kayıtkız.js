@@ -4,20 +4,27 @@ const db = require("quick.db")
 exports.run = async (client, message, args) => {
 
   if (!message.guild.member(message.member.id).roles.has('608248510827069462')) 
-  return message.reply('Bu komutu kullanamazsın **📞Teyit Sorumlusu** rolü yok.')
+  return message.reply('Bu komutu kullanamazsın **📞Teyit Sorumlusu** değilsin.')
   let kullanıcı = message.mentions.users.first()
   if (!kullanıcı) return message.channel.send('**Etiket Atmayı Unuttun!**')
   let member = message.guild.member(kullanıcı)
+  let vrol = ("591769569819885578")
+  let arol = ("618087321392251004")
 
   member.addRole('591769569819885578')
   member.removeRole('618087321392251004')
 
-const codeplus = new Discord.RichEmbed()
-        .setTitle(`<a:aahg:652151800765612033> **Sunucuya Hoşgeldiniz** <a:emoji_33:619891578370261013>`)
-        .setDescription(`${member}, **Kaydınız Başarıyla Gerçekleşti! İyi Eğlenceler.**`)
-        .setColor('00000')
-        .setTimestamp()
-        message.channel.send(codeplus)
+const embed = new Discord.RichEmbed()
+                  .setDescription("Kayıt İşlemi Başarılı <:evet:663273663730286612>")
+                  .setColor("GREEN")
+                  .addField(":star: Yetkili", message.author)
+                  .setTimestamp()
+                  .addField(":star: Kaydedilen Üye", member)
+                  .setTimestamp()
+                  .addField(`:star: Verilen Rol`, message.guild.roles.get(vrol).name)
+                  .setTimestamp()
+                  .addField(`:star: Alınan Rol`, message.guild.roles.get(arol).name)
+        message.channel.send(embed)
 
 };
 
