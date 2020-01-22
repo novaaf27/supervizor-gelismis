@@ -16,12 +16,13 @@ exports.run = (client, message, args) => {
   message.guild.member(user.id).setNickname(eming+isim)
   message.guild.member(user.id).setNickname(eming+isim)
 
-const codeplus = new Discord.RichEmbed()
-        .setTitle(`**Sunucuya Hoşgeldiniz**`)
-        .setDescription(`${user}, **İsminiz Başarıyla Kaydedildi! İyi Eğlenceler.** `)
-        .setColor('00000')
-        .setTimestamp()
-        message.channel.send(codeplus)
+const embed = new Discord.RichEmbed()
+                  .setDescription("İsim Değiştirme Başarılı <:evet:663273663730286612>")
+                  .setColor("GREEN")
+                  .addField(":star: Yetkili", message.author)
+                  .addField(":star: İsmi Değiştilen Üye", user)
+                  .addField(":star: Yeni İsmi", eming+isim)
+        message.channel.send(embed)
 
   };
 exports.conf = {
