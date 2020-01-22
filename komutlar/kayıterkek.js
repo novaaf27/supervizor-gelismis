@@ -12,12 +12,15 @@ exports.run = async (client, message, args) => {
   member.addRole('590111080991162368')
   member.removeRole('618087321392251004')
 
-const codeplus = new Discord.RichEmbed()
-        .setTitle(`<a:aahg:652151800765612033> **Sunucuya Hoşgeldiniz** <a:emoji_33:619891578370261013>`)
-        .setDescription(`${member}, **Kaydınız Başarıyla Gerçekleşti! İyi Eğlenceler.**`)
-        .setColor('00000')
-        .setTimestamp()
-        message.channel.send(codeplus)
+const embed = new Discord.RichEmbed()
+                  .setDescription("Kayıt İşlemi Başarılı <:evet:663273663730286612>")
+                  .setColor("GREEN")
+                  .addField(":star: Yetkili", message.author)
+                  .setTimestamp()
+                  .addField(":star: Kaydedilen Üye", member)
+                  .setTimestamp()
+                  .addField("<a:emoji_33:619891578370261013> Swerveye Hoşgeldin <a:emoji_33:619891578370261013>")
+        message.channel.send(embed)
 
 };
 

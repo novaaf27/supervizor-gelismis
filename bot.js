@@ -48,15 +48,6 @@ fs.readdir('./komutlar/', (err, files) => {
 });
 
 
-
-
-
-
-
-
-
-
-
 ////////////////////////
 client.on('message', msg => {
 
