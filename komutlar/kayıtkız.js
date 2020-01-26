@@ -4,7 +4,7 @@ const db = require("quick.db")
 exports.run = async (client, message, args) => {
 
   if (!message.guild.member(message.member.id).roles.has('608248510827069462')) 
-  return message.reply('Bu komutu kullanamazsın **📞Teyit Sorumlusu** değilsin.')
+  return message.reply(`Bu komutu kullanamazsın ${message.guild.roles.get("671015389798465536")} değilsin.`)
   let kullanıcı = message.mentions.users.first()
   if (!kullanıcı) return message.channel.send('**Etiket Atmayı Unuttun!**')
   let member = message.guild.member(kullanıcı)
@@ -21,9 +21,9 @@ const embed = new Discord.RichEmbed()
                   .setTimestamp()
                   .addField(":star: Kaydedilen Üye", member)
                   .setTimestamp()
-                  .addField(`:star: Verilen Rol`, message.guild.roles.get(vrol).name)
+                  .addField(`:star: Verilen Rol`, message.guild.roles.get(vrol))
                   .setTimestamp()
-                  .addField(`:star: Alınan Rol`, message.guild.roles.get(arol).name)
+                  .addField(`:star: Alınan Rol`, message.guild.roles.get(arol))
         message.channel.send(embed)
 
 };
