@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
 exports.run = (client, message, args) => { 
-    let rol = "671015389798465536"
+
   if (!message.guild.member(message.member.id).roles.has('608248510827069462')) 
-  return message.reply(`Bu komutu kullanamazsın ${message.guild.roles.get(rol)} değilsin.`)
+  return message.reply(`Bu komutu kullanamazsın ${message.guild.roles.get("608248510827069462")} değilsin.`)
   
   let user = message.mentions.users.first() || message.guild.members.get(args[0])
   let isim = args.slice(1).join(' ');
