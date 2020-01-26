@@ -50,6 +50,7 @@ fs.readdir('./komutlar/', (err, files) => {
 
 ////////////////////////
 //////////////////////////
+
 client.on('ready', ()=>{
 client.channels.get('670979904027754507').join()
 })
