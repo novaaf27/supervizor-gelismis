@@ -121,8 +121,8 @@ client.on('guildMemberAdd', (member, message) => {
   let aylar = aylartoplam 
   let rol = "671015389798465536"
 let user = client.users.get(member.id);
-require("moment-duration-format");``
-let toplam = (`${member.guild.memberCount}`)
+require("moment-duration-format");
+let sunucu = client.guilds.get("590108657065132032")
     const kurulus = new Date().getTime() - user.createdAt.getTime();
     const gün = moment.duration(kurulus).format("D")   
     var kontrol;
@@ -131,7 +131,7 @@ let toplam = (`${member.guild.memberCount}`)
   let kanal = "618802507203870720"
   if(!kanal) return
   //`${moment(user.createdAt).format('DD')} ${aylar[moment(user.createdAt).format('MM')]} ${moment(user.createdAt).format('YYYY HH:mm:ss')}`)
- member.guild.channels.get(kanal).send(`<a:aad:652150016462290947> Hoşgeldin ${member} seninle ${toplam} kişiyiz! <a:aad:652150016462290947> \n\n <a:loading:653122702030405632> Kaydının yapılması için sesli odaya gelip ses vermen gerekli. <a:loading:653122702030405632>\n\n <a:aacc:652153904926162974> Hesap Kuruluş Zamanı: ${moment(user.createdAt).format('DD')} ${aylar[moment(user.createdAt).format('MM')]} ${moment(user.createdAt).format('YYYY HH:mm:ss')} <a:aacc:652153904926162974> \n\n Bu Kullanıcı: ${kontrol}\n\n ${message.guild.roles.get(rol)} Rolündeki yetkililer seninle ilgilenecektir.`)
+message.sunucu.channels.get(kanal).send(`<a:aad:652150016462290947> Hoşgeldin ${member} seninle ${message.sunucu.memberCount || "DiscordAPI Hatası."} kişiyiz! <a:aad:652150016462290947> \n\n <a:loading:653122702030405632> Kaydının yapılması için sesli odaya gelip ses vermen gerekli. <a:loading:653122702030405632>\n\n <a:aacc:652153904926162974> Hesap Kuruluş Zamanı: ${moment(user.createdAt).format('DD')} ${aylar[moment(user.createdAt).format('MM')]} ${moment(user.createdAt).format('YYYY HH:mm:ss')} <a:aacc:652153904926162974> \n\n Bu Kullanıcı: ${kontrol}\n\n ${message.sunucu.roles.get(rol)} Rolündeki yetkililer seninle ilgilenecektir.`)
 })
 
 //////////////////////////////////////////////////////
