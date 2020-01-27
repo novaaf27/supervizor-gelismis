@@ -129,7 +129,6 @@ const channel  = member.guild.channels.get(id);
     const kurulus = new Date().getTime() - user.createdAt.getTime();
     const gün = moment.duration(kurulus).format("D")   
     var kontrol;
-  
     if (gün < 7) kontrol = 'Güvenilir Değil!'
     if (gün > 7) kontrol = 'Güvenilir Gözüküyor!'   
 channel.send(`<a:aad:652150016462290947> Hoşgeldin ${member} seninle ${member.guild.members.size} kişiyiz! <a:aad:652150016462290947> \n\n <a:loading:653122702030405632> Kaydının yapılması için sesli odaya gelip ses vermen gerekli. <a:loading:653122702030405632>\n\n <a:aacc:652153904926162974> Hesap Kuruluş Zamanı: ${moment(user.createdAt).format('DD')} ${aylar[moment(user.createdAt).format('MM')]} ${moment(user.createdAt).format('YYYY HH:mm:ss')} <a:aacc:652153904926162974> \n\n Bu Kullanıcı: **${kontrol}**\n\n <@&608248510827069462> Rolündeki yetkililer seninle ilgilenecektir.`)
