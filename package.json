@@ -10,8 +10,6 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "canvas": "^2.6.0",
-    "chalk": "^2.4.2",
     "common-tags": "^1.8.0",
     "cpu-stat": "^2.0.1",
     "db": "^1.1.1",
@@ -20,13 +18,13 @@
     "discord": "^0.8.2",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
-    "jimp": "^0.6.4",
     "moment": "^2.24.0",
     "moment-duration-format": "^2.3.2",
     "node-superfetch": "^0.1.9",
     "os": "^0.1.1",
     "parse-ms": "^2.1.0",
-    "quick.db": "^7.0.0-b22"
+    "quick.db": "^7.0.0-b22",
+    "discord.js": "^11.5.1"
   },
   "engines": {
     "node": "8.x"

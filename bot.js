@@ -2,12 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
 client.queue = new Map()
-const chalk = require('chalk');
 const fs = require('fs');
-const Jimp = require('jimp');
 const db = require('quick.db');
-const Canvas = require('canvas')
-const ms = require('parse-ms')
 const moment = require('moment');
 require('./util/eventLoader')(client);
 
