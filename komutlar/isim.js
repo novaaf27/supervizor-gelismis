@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
   
   let user = message.mentions.users.first() || message.guild.members.get(args[0])
   let isim = args.slice(1).join(' ');
-  let eming = ("ֆ ")
+  let eming = ("⋆ ")
   if(!user) return message.channel.send('İsim işlemine devam etmek için,bir kullanıcı gerekiyor.').then(s => s.delete(7000))
   
   if(!isim) return message.channel.send(user + ' Adlı kullanıcıya belirlenecek ismi belirtmen gerekiyor.')
