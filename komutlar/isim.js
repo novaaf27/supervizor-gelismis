@@ -1,41 +1,28 @@
-const Discord = require('discord.js');
-const db = require('quick.db')
-exports.run = (client, message, args) => { 
+const Discord = require("discord.js"),
+  db = require("quick.db");
 
-  if (!message.guild.member(message.member.id).roles.has('608248510827069462')) 
-  return message.reply(`Bu komutu kullanamazsın ${message.guild.roles.get("608248510827069462")} değilsin.`)
-  
-  let user = message.mentions.users.first() || message.guild.members.get(args[0])
-  let isim = args.slice(1).join(' ');
-  let eming = ("⋆ ")
-  if(!user) return message.channel.send('İsim işlemine devam etmek için,bir kullanıcı gerekiyor.').then(s => s.delete(7000))
-  
-  if(!isim) return message.channel.send(user + ' Adlı kullanıcıya belirlenecek ismi belirtmen gerekiyor.')
-  
-  message.guild.member(user.id).setNickname(eming+isim)
-  message.guild.member(user.id).setNickname(eming+isim)
-  message.guild.member(user.id).setNickname(eming+isim)
-
-const embed = new Discord.RichEmbed()
-                  .setDescription("İsim Değiştirme Başarılı <:evet:663273663730286612>")
-                  .setColor("GREEN")
-                  .addField(":star: Yetkili", message.author)
-                  .setTimestamp()
-                  .addField(":star: İsmi Değiştilen Üye", user)
-                  .setTimestamp()
-                  .addField(":star: Yeni İsmi", eming+isim)
-        message.channel.send(embed)
-
-  };
+exports.run = async (bot, message, args, tools,) => {
+  let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "!";
+  const embed = new Discord.RichEmbed()
+  .setAuthor("Swerve Register", bot.user.avatarURL)
+    .setColor('BLUE')
+    .setTimestamp()
+    .setDescription(`Swerve Özel Kayıt Botu.`)
+    .addField(
+      `İsim Değiştirme`,
+      `\`w!i @etiket isim | Yaş\``
+    )
+    .addField(`Kaydetme`, `\`w!e @erkekuye\`, \`w!k @kızuye\``)
+    .setFooter("© Swerve Register", bot.user.avatarURL);
+  message.channel.send(embed);
+};
 exports.conf = {
-  enabled: true,  
-  guildOnly: false, 
-  aliases: ['i'], 
+  enabled: true,
+  guildOnly: false,
+  aliases: ["y"],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'isim',
-  description: 'taslak', 
-  usage: 'isim'
+  name: "yardım"
 };
