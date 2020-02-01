@@ -128,6 +128,8 @@ const channel  = member.guild.channels.get(id);
     if (gün < 7) kontrol = 'Güvenilir Değil **Karantina**ya Alındı!'
     if (gün < 7) {
 member.addRole('672422770956697600') 
+    }
+    if (gün < 7) {
 member.removeRole('618087321392251004')
     }
     if (gün > 7) kontrol = 'Güvenilir Gözüküyor!'   
