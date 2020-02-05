@@ -45,13 +45,7 @@ fs.readdir('./komutlar/', (err, files) => {
 
 
 ////////////////////////
-//////////////////////////
 
-client.on('ready', ()=>{
-client.channels.get('670979904027754507').join()
-})
-
-//////////////////
 client.on('message', msg => {
 
 if (!msg.content.startsWith(prefix)) {
@@ -77,19 +71,19 @@ client.login(ayarlar.token);
 ///////////////////////////////////////////////////
 
 client.on("userUpdate", async(old, nev) => {
-let emingSunucu = "590108657065132032" //Sunucu ID
-let emingKanal = "651121702444728344" //BILGI KANAL ID
-let emingRol = "610240016031023104" //ROL ID
-let emingTag = "⋆" //TAG 
+let emingSunucu = "670725266670354468" //Sunucu ID
+let emingKanal = "674704454385401856" //BILGI KANAL ID
+let emingRol = "672348469280768003" //ROL ID
+let emingTag = "ꄶ" //TAG 
 if(old.username !== nev.username) {
   
 if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.get(nev.id).roles.has(emingRol)) {
-      client.channels.get(emingKanal).send(`<a:emoji_33:619891578370261013> **${nev}, İsmine \`${emingTag}\` eklediği için Tag rolünü kazandı.** <a:emoji_33:619891578370261013>`) 
+      client.channels.get(emingKanal).send(`<:tik:670933175677091851> **${nev}, \`${emingTag}\` Tagını aldı ${emingRol} rolünü kazandı.**`) 
       client.guilds.get(emingSunucu).members.get(nev.id).addRole(emingRol)
      }
   if(!nev.username.includes(emingTag) && client.guilds.get(emingSunucu).members.get(nev.id).roles.has(emingRol)) {
      client.guilds.get(emingSunucu).members.get(nev.id).removeRole(emingRol)
-     client.channels.get(emingKanal).send(`:anger: **${nev}, İsminden \`${emingTag}\`'ı çıkardığı için Tag rolünü kaybetti.**`)
+      client.channels.get(emingKanal).send(`<:hayr:670933128835235841> **${nev}, \`${emingTag}\` Tagını çıkarttı ${emingRol} rolünü kaybetti.**`) 
     } 
      
   }
@@ -100,7 +94,7 @@ if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.ge
 /////////////////////////////////////////////////////
 
 client.on("guildMemberAdd", (member, message) => {
-if(member.guild.id !== "590108657065132032") return; //sunucu ıd
+if(member.guild.id !== "670725266670354468") return; //sunucu ıd
  let aylartoplam = {
         "01": "Ocak",
         "02": "Şubat",
@@ -116,18 +110,17 @@ if(member.guild.id !== "590108657065132032") return; //sunucu ıd
         "12": "Aralık"
   }
   let aylar = aylartoplam 
-  let rol = "671015389798465536"
 let user = client.users.get(member.id);
 require("moment-duration-format");
 let eskiNick = member.user.username;
-const id = "618802507203870720" //kanal ıd
+const id = "671383508723433482" //kanal ıd
 const channel  = member.guild.channels.get(id);
     const kurulus = new Date().getTime() - user.createdAt.getTime();
     const gün = moment.duration(kurulus).format("D")   
     var kontrol;
     if (gün < 7) kontrol = 'Güvenilir Değil!'
     if (gün > 7) kontrol = 'Güvenilir Gözüküyor!'   
-channel.send(`<a:aad:652150016462290947> Hoşgeldin ${member} seninle ${member.guild.members.size} kişiyiz! <a:aad:652150016462290947> \n\n <a:loading:653122702030405632> Kaydının yapılması için sesli odaya gelip ses vermen gerekli. <a:loading:653122702030405632>\n\n <a:aacc:652153904926162974> Hesap Kuruluş Zamanı: ${moment(user.createdAt).format('DD')} ${aylar[moment(user.createdAt).format('MM')]} ${moment(user.createdAt).format('YYYY HH:mm:ss')} <a:aacc:652153904926162974> \n\n Bu Kullanıcı: **${kontrol}**\n\n <@&608248510827069462> Rolündeki yetkililer seninle ilgilenecektir.`)
+channel.send(`<a:aad:652150016462290947> Hoşgeldin ${member} seninle ${member.guild.members.size} kişiyiz! <a:aad:652150016462290947> \n\n <a:loading:653122702030405632> Kaydının yapılması için sesli odaya gelip ses vermen gerekli. <a:loading:653122702030405632>\n\n <a:aacc:652153904926162974> Hesap Kuruluş Zamanı: ${moment(user.createdAt).format('DD')} ${aylar[moment(user.createdAt).format('MM')]} ${moment(user.createdAt).format('YYYY HH:mm:ss')} <a:aacc:652153904926162974> \n\n Bu Kullanıcı: **${kontrol}**\n\n <@&671434803681427495> Rolündeki yetkililer seninle ilgilenecektir.`)
 })
 
 //////////////////////////////////////////////////////

@@ -17,6 +17,7 @@ var oyun = [
     
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Aktif, Komutlar yüklendi!`);
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username} ismi ile giriş yapıldı!`);
+  client.channels.get('674704129519648816').join()
   client.user.setStatus("online");
   client.user.setActivity(`•ꄶ Judge• Krallığı`);
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Oyun ismi ayarlandı!`);

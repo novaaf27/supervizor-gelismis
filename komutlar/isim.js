@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
   let eming = ("ꄶ ")
   if(!user) return message.channel.send('<:hayr:670933128835235841> **Etiket Atmayı Unuttun**').then(s => s.delete(7000))
   
-  if(!isim) return message.channel.send("<:hayr:670933128835235841>" user + ' Adlı kullanıcıya belirlenecek ismi belirtmen gerekiyor.')
+  if(!isim) return message.channel.send( user + 'Adlı kullanıcıya belirlenecek ismi belirtmen gerekiyor. <:hayr:670933128835235841>')
   
   message.guild.member(user.id).setNickname(eming+isim)
   message.guild.member(user.id).setNickname(eming+isim)
@@ -23,6 +23,7 @@ const embed = new Discord.RichEmbed()
                   .addField(":star: İsmi Değiştirilen Üye", user)
                   .setTimestamp()
                   .addField(`:star: Yeni İsmi`, eming+isim)
+                  .setFooter('© Judge Register,')
         message.channel.send(embed)
 
   };

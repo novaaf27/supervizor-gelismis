@@ -8,10 +8,10 @@ exports.run = async (client, message, args) => {
   let kullanıcı = message.mentions.users.first()
   if (!kullanıcı) return message.channel.send('<:hayr:670933128835235841> **Etiket Atmayı Unuttun!**')
   let member = message.guild.member(kullanıcı)
-  let vrol = ("590111080991162368")
-  let arol = ("618087321392251004")
-  member.addRole('590111080991162368')
-  member.removeRole('618087321392251004')
+  let vrol = ("671420743208271874")
+  let arol = ("671423809739423757")
+  member.addRole('671420743208271874')
+  member.removeRole('671423809739423757')
 
 const embed = new Discord.RichEmbed()
                   .setDescription("Kayıt İşlemi Başarılı <:tik:670933175677091851>")
@@ -23,6 +23,7 @@ const embed = new Discord.RichEmbed()
                   .addField(`:star: Verilen Rol`, message.guild.roles.get(vrol))
                   .setTimestamp()
                   .addField(`:star: Alınan Rol`, message.guild.roles.get(arol))
+                  .setFooter('© Judge Register,')
         message.channel.send(embed)
 
 };
