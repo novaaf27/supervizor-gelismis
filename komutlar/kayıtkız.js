@@ -3,10 +3,10 @@ const db = require("quick.db")
 
 exports.run = async (client, message, args) => {
 
-  if (!message.guild.member(message.member.id).roles.has('608248510827069462')) 
-  return message.reply(`Bu komutu kullanamazsın ${message.guild.roles.get("608248510827069462")} değilsin.`)
+  if (!message.guild.member(message.member.id).roles.has('671434803681427495')) 
+  return message.reply(`Bu komutu kullanamazsın ${message.guild.roles.get("671434803681427495")} değilsin. <:hayr:670933128835235841>`)
   let kullanıcı = message.mentions.users.first()
-  if (!kullanıcı) return message.channel.send('**Etiket Atmayı Unuttun!**')
+  if (!kullanıcı) return message.channel.send('<:hayr:670933128835235841> **Etiket Atmayı Unuttun!**')
   let member = message.guild.member(kullanıcı)
   let vrol = ("591769569819885578")
   let arol = ("618087321392251004")
@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
   member.removeRole('618087321392251004')
 
 const embed = new Discord.RichEmbed()
-                  .setDescription("Kayıt İşlemi Başarılı <:evet:663273663730286612>")
+                  .setDescription("Kayıt İşlemi Başarılı <:tik:670933175677091851>")
                   .setColor("GREEN")
                   .addField(":star: Yetkili", message.author)
                   .setTimestamp()
