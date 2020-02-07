@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
   
   let user = message.mentions.users.first() || message.guild.members.get(args[0])
   let isim = args.slice(1).join(' ');
-  let eming = ("ꄶ ")
+  let eming = ("ㄆ ")
   if(!user) return message.channel.send('<:hayr:670933128835235841> **Etiket Atmayı Unuttun**').then(s => s.delete(7000))
   
   if(!isim) return message.channel.send( user + 'Adlı kullanıcıya belirlenecek ismi belirtmen gerekiyor. <:hayr:670933128835235841>')
