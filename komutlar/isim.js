@@ -23,7 +23,7 @@ const embed = new Discord.RichEmbed()
                   .addField(":star: İsmi Değiştirilen Üye", user)
                   .setTimestamp()
                   .addField(`:star: Yeni İsmi`, eming+isim)
-                  .setFooter('© Judge Register,')
+                  .setFooter('© Judge Register')
         message.channel.send(embed)
 
   };
