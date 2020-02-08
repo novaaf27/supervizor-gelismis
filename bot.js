@@ -74,7 +74,7 @@ client.on("userUpdate", async(old, nev) => {
 let emingSunucu = "670725266670354468" //Sunucu ID
 let emingKanal = "674704454385401856" //BILGI KANAL ID
 let emingRol = "672348469280768003" //ROL ID
-let emingTag = "ꄶ" //TAG 
+let emingTag = "ㄆ" //TAG 
 if(old.username !== nev.username) {
   
 if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.get(nev.id).roles.has(emingRol)) {
