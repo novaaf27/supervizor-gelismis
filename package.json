@@ -25,11 +25,10 @@
     "parse-ms": "^2.1.0",
     "quick.db": "^7.0.0-b22",
     "discord.js": "^11.5.1",
-    "winston": "^3.2.1",
-    "snekfetch": "^4.0.4"
+    "winston": "^3.2.1"
   },
   "engines": {
-    "node": "10.x"
+    "node": "8.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
