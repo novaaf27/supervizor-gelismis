@@ -25,7 +25,8 @@
     "parse-ms": "^2.1.0",
     "quick.db": "^7.0.0-b22",
     "discord.js": "^11.5.1",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "snekfetch": "^4.0.4"
   },
   "engines": {
     "node": "10.x"
