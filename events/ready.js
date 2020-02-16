@@ -19,7 +19,7 @@ var oyun = [
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username} ismi ile giriş yapıldı!`);
   client.channels.get('674704129519648816').join()
   client.user.setStatus("online");
-  client.user.setActivity(`•ㄆ Judge• Krallığını`, { type: "WATCHING" });
+  client.user.setActivity(`KAYIT BOT`, { type: "WATCHING" });
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Oyun ismi ayarlandı!`);
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 };

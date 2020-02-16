@@ -23,7 +23,7 @@ const embed = new Discord.RichEmbed()
                   .addField(`:star: Verilen Rol`, message.guild.roles.get(vrol))
                   .setTimestamp()
                   .addField(`:star: Alınan Rol`, message.guild.roles.get(arol))
-                  .setFooter('© Judge Register')
+                  .setFooter('© Register')
         message.channel.send(embed)
 
 };

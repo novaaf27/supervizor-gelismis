@@ -71,10 +71,10 @@ client.login(ayarlar.token);
 ///////////////////////////////////////////////////
 
 client.on("userUpdate", async(old, nev) => {
-let emingSunucu = "670725266670354468" //Sunucu ID
-let emingKanal = "674704454385401856" //BILGI KANAL ID
-let emingRol = "672348469280768003" //ROL ID
-let emingTag = "ㄆ" //TAG 
+let emingSunucu = "" //Sunucu ID
+let emingKanal = "" //BILGI KANAL ID
+let emingRol = "" //ROL ID
+let emingTag = "" //TAG 
 if(old.username !== nev.username) {
   
 if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.get(nev.id).roles.has(emingRol)) {
@@ -94,7 +94,7 @@ if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.ge
 /////////////////////////////////////////////////////
 
 client.on("guildMemberAdd", (member, message) => {
-if(member.guild.id !== "670725266670354468") return; //sunucu ıd
+if(member.guild.id !== "") return; //sunucu ıd
  let aylartoplam = {
         "01": "Ocak",
         "02": "Şubat",
@@ -113,7 +113,7 @@ if(member.guild.id !== "670725266670354468") return; //sunucu ıd
 let user = client.users.get(member.id);
 require("moment-duration-format");
 let eskiNick = member.user.username;
-const id = "671383508723433482" //kanal ıd
+const id = "" //kanal ıd
 const channel  = member.guild.channels.get(id);
     const kurulus = new Date().getTime() - user.createdAt.getTime();
     const gün = moment.duration(kurulus).format("D")   
