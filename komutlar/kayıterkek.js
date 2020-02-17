@@ -2,10 +2,10 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
-  if (!message.guild.member(message.member.id).roles.has("671434803681427495"))
+  if (!message.guild.member(message.member.id).roles.has("669474117766086676"))
     return message.reply(
       `Bu komutu kullanamazsın ${message.guild.roles.get(
-        "671434803681427495"
+        "669474117766086676"
       )} değilsin. <:hayr:670933128835235841>`
     );
   let kullanıcı = message.mentions.users.first();
@@ -14,10 +14,10 @@ exports.run = async (client, message, args) => {
       "<:hayr:670933128835235841> **Etiket Atmayı Unuttun!**"
     );
   let member = message.guild.member(kullanıcı);
-  let vrol = "671420743208271874";
-  let arol = "671423809739423757";
-  member.addRole("671420743208271874");
-  member.removeRole("671423809739423757");
+  let vrol = "669474112741310467";
+  let arol = "669474117766086676";
+  member.addRole("669474112741310467");
+  member.removeRole("669474117766086676");
 
   const embed = new Discord.RichEmbed()
     .setDescription("Kayıt İşlemi Başarılı <:tik:670933175677091851>")

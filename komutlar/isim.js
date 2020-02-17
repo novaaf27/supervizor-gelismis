@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 exports.run = (client, message, args) => {
-  if (!message.guild.member(message.member.id).roles.has("671434803681427495"))
+  if (!message.guild.member(message.member.id).roles.has("669474117766086676"))
     return message.reply(
       `Bu komutu kullanamazsın ${message.guild.roles.get(
         "671434803681427495"
