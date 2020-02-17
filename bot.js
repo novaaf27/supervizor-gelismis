@@ -46,14 +46,22 @@ fs.readdir('./komutlar/', (err, files) => {
 
 ////////////////////////
 
-client.on('message', msg => {
-
-if (!msg.content.startsWith(prefix)) {
-    return;
+client.on("message", async message => {
+  if (message.content === "gir") {
+    client.emit(
+      "guildMemberAdd",
+      message.member || (await message.guild.fetchMember(message.author))
+    );
   }
-
-  });
-
+});
+client.on("message", async message => {
+  if (message.content === "çık") {
+    client.emit(
+      "guildMemberRemove",
+      message.member || (await message.guild.fetchMember(message.author))
+    );
+  }
+});
 
 client.elevation = message => {
   if(!message.guild) {
@@ -71,10 +79,10 @@ client.login(ayarlar.token);
 ///////////////////////////////////////////////////
 
 client.on("userUpdate", async(old, nev) => {
-let emingSunucu = "" //Sunucu ID
-let emingKanal = "" //BILGI KANAL ID
-let emingRol = "" //ROL ID
-let emingTag = "" //TAG 
+let emingSunucu = "665499317447950336" //Sunucu ID
+let emingKanal = "678150780058075146" //BILGI KANAL ID
+let emingRol = "669474117766086676" //ROL ID
+let emingTag = "Hz." //TAG 
 if(old.username !== nev.username) {
   
 if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.get(nev.id).roles.has(emingRol)) {
@@ -94,7 +102,7 @@ if(nev.username.includes(emingTag) && !client.guilds.get(emingSunucu).members.ge
 /////////////////////////////////////////////////////
 
 client.on("guildMemberAdd", (member, message) => {
-if(member.guild.id !== "") return; //sunucu ıd
+if(member.guild.id !== "665499317447950336") return; //sunucu ıd
  let aylartoplam = {
         "01": "Ocak",
         "02": "Şubat",
@@ -113,7 +121,7 @@ if(member.guild.id !== "") return; //sunucu ıd
 let user = client.users.get(member.id);
 require("moment-duration-format");
 let eskiNick = member.user.username;
-const id = "" //kanal ıd
+const id = "678150780058075146" //kanal ıd
 const channel  = member.guild.channels.get(id);
     const kurulus = new Date().getTime() - user.createdAt.getTime();
     const gün = moment.duration(kurulus).format("D")   
