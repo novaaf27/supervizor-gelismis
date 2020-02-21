@@ -1,33 +1,32 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 exports.run = (client, message, args) => {
-  if (!message.guild.member(message.member.id).roles.has("669474117766086676"))
+  if (!message.guild.member(message.member.id).roles.has("Yetkili rol id"))
     return message.reply(
       `Bu komutu kullanamazsın ${message.guild.roles.get(
-        "671434803681427495"
-      )} değilsin. <:hayr:670933128835235841>`
+        "yetkili rol id"
+      )} değilsin.`
     );
 
   let user =
     message.mentions.users.first() || message.guild.members.get(args[0]);
   let isim = args.slice(1).join(" ");
-  let eming = "ㄆ ";
+  let eming = "TAG ";
   if (!user)
     return message.channel
-      .send("<:hayr:670933128835235841> **Etiket Atmayı Unuttun**")
+      .send("**Etiket Atmayı Unuttun**")
       .then(s => s.delete(7000));
 
   if (!isim)
     return message.channel.send(
       user +
-        "Adlı kullanıcıya belirlenecek ismi belirtmen gerekiyor. <:hayr:670933128835235841>"
+        "Adlı kullanıcıya belirlenecek ismi belirtmen gerekiyor."
     );
 
   message.guild.member(user.id).setNickname(eming + isim);
-  message.guild.member(user.id).setNickname(eming + isim);
 
   const embed = new Discord.RichEmbed()
-    .setDescription("İsim Değiştirme Başarılı <:tik:670933175677091851>")
+    .setDescription("İsim Değiştirme Başarılı")
     .setColor("GREEN")
     .addField(":star: Yetkili", message.author)
     .setTimestamp()

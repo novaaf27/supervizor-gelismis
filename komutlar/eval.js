@@ -3,11 +3,9 @@ const util = require("util");
 const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
- 
   let tokenuyari = `SyntaxError: Unexpected token: (Tokeni attım geldi mi ?)`;
   var embed = new Discord.RichEmbed().setColor("RANDOM");
   var code = args.join(" ");
-  //var code2 = args.slice(1).join(' ') ||  args.join(' ');
 
   if (!args[0]) {
     message.channel.send(`Lütfen test edeceğiniz kodu **yazın!**`);
@@ -65,6 +63,6 @@ exports.conf = {
 };
 exports.help = {
   name: "eval",
-  description: "Kod test etmek için kullanılır.",
-  usage: "eval kod"
+  description: "eval",
+  usage: "eval"
 };
