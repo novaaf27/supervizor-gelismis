@@ -1,47 +1,62 @@
-const Discord = require("discord.js");
-const db = require("quick.db");
+const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
-  if (!message.guild.member(message.member.id).roles.has("701412014559592478"))
-    return message.reply(
-      `Bu komutu kullanamazsın ${message.guild.roles.get(
-        "701412014559592478"
-      )} değilsin.`
-    );
-  let kullanıcı = message.mentions.users.first();
-  if (!kullanıcı)
-    return message.channel.send(
-      "**Etiket Atmayı Unuttun!**"
-    );
-  let member = message.guild.member(kullanıcı);
-  let vrol = "695652616583118849";
-  let arol = "701412703625019402";
-  member.addRole(vrol);
-  member.removeRole(arol);
 
-  const embed = new Discord.RichEmbed()
-    .setDescription("Kayıt İşlemi Başarılı")
-    .setColor("GREEN")
-    .addField(":star: Yetkili", message.author)
-    .setTimestamp()
-    .addField(":star: Kaydedilen Üye", member)
-    .setTimestamp()
-    .addField(`:star: Verilen Rol`, message.guild.roles.get(vrol))
-    .setTimestamp()
-    .addField(`:star: Alınan Rol`, message.guild.roles.get(arol))
-    .setFooter("© TlhaMert");
-  message.channel.send(embed);
+let kayityetkili = '' //KAYIT YETKİLİSİ ID
+let verbuse = '' //VERİLECEK ROL ID
+let verbusem = '' //VERİLECEK ROL ID
+let albuse = '' //ALINACAK ROL ID
+let albusem = '' //ALINACAK ROL ID
+let isimön = '' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+let isimson = '' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
+
+//TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
+
+  if(!message.member.roles.has(kayityetkili)) 
+  if(!message.member.hasPermission("ADMINISTRATOR"))
+  return message.channel.send(`Bu komutu kullanabilmek için \`Kayıt\` yetkisine sahip olmasınız.`);
+  let member = message.mentions.members.first()
+  let isim = args.slice(1).join(" ")
+  if (!member) return message.channel.send('Bir Üye Etiketlemelisin💖')
+  if (!isim) return message.channel.send('Bir İsim Yazmalısın 💖')
+
+  setTimeout(function(){
+  member.setNickname(`${isimön}${isim}${isimson}`)
+  },2000)
+  setTimeout(function(){
+  member.addRole(verbuse)
+  member.addRole(verbusem)
+  },3000)
+  setTimeout(function(){
+  member.removeRole(albuse)
+  member.addRole(albusem)
+  },4000)
+  
+ const emoji = client.emojis.find(emoji => emoji.name === "tik");
+ let embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setDescription(`✅ Kayıt işlemi Başarılı ✅
+
+**Kayıt edilen kullanıcı :** ${isimön}${isim}${isimson}
+
+**Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
+
+**Kayıt işleminde alınan rol :** <@&${albuse}>, <@&${albusem}>
+`)
+  .setFooter(`Komutu kullanan yetkili : ${message.author.username}`) 
+  .setImage("https://37.media.tumblr.com/f1d867e7b7771f57ccf325a13630ce29/tumblr_n3zeepZMFm1ttv14wo1_r1_250.gif")
+message.channel.send(embed)
+message.react(emoji)
 };
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: ["e"],
+  guildOnly: true,
+  aliases: ['oyuncu','o'],
   permLevel: 0
-};
-
+}
 exports.help = {
-  name: "erkek",
-  description: "Erkek Üyeyi Kayıt etme komutu ",
-  usage: "!erkek"
-};
+  name: 'erkek',
+  description: "Erkek kullanıcıları kayıt etme komutu.",
+  usage: '!erkek <yeni nick>'
+}
