@@ -94,7 +94,7 @@ client.on("userUpdate", async (old, nev) => {
       client.channels
         .get(emingKanal)
         .send(
-          `<:tik:670933175677091851> **${nev}, \`${emingTag}\` Tagını aldı ${emingRol} rolünü kazandı.**`
+          ` **${nev}, \`${emingTag}\` Tagını aldı ${emingRol} rolünü kazandı.**`
         );
       client.guilds
         .get(emingSunucu)
@@ -115,7 +115,7 @@ client.on("userUpdate", async (old, nev) => {
       client.channels
         .get(emingKanal)
         .send(
-          `<:hayr:670933128835235841> **${nev}, \`${emingTag}\` Tagını çıkarttı ${emingRol} rolünü kaybetti.**`
+          ` **${nev}, \`${emingTag}\` Tagını çıkarttı ${emingRol} rolünü kaybetti.**`
         );
     }
   }
@@ -150,18 +150,18 @@ client.on("guildMemberAdd", (member, message) => {
   const kurulus = new Date().getTime() - user.createdAt.getTime();
   const gün = moment.duration(kurulus).format("D");
   var kontrol;
-  if (gün < 7) kontrol = "Güvenilir Değil!";
-  if (gün > 7) kontrol = "Güvenilir Gözüküyor!";
+  if (gün < 7) kontrol = "FAKE ÜYE!";
+  if (gün > 7) kontrol = "Güvenilir Kullanıcı!";
   channel.send(
-    `<a:tac4:670934198487351296> Hoşgeldin ${member} seninle ${
-      member.guild.members.size
-    } kişiyiz! <a:tac4:670934198487351296> \n\n <a:yesil:671649968561324045> Kaydının yapılması için sesli odaya gelip ses vermen gerekli. <a:yesil:671649968561324045>\n\n <a:hypesquad:670933700405362698> Hesap Kuruluş Zamanı: ${moment(
+    ` Hoşgeldin ${member} seninle ${
+    member.guild.members.size
+    } kişiyiz!  \n\n  Kaydının yapılması için sesli odaya gelip ses vermen gerekli. \n\n  Hesap Kuruluş Zamanı: ${moment(
       user.createdAt
     ).format("DD")} ${aylar[moment(user.createdAt).format("MM")]} ${moment(
       user.createdAt
     ).format(
       "YYYY HH:mm:ss"
-    )} <a:hypesquad:670933700405362698> \n\n Bu Kullanıcı: **${kontrol}**\n\n <@&671434803681427495> Rolündeki yetkililer seninle ilgilenecektir.`
+    )}  \n\n Bu Kullanıcı: **${kontrol}**\n\n <@&YETKİLİID> Rolündeki yetkililer seninle ilgilenecektir.`
   );
 });
 

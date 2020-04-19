@@ -33,7 +33,7 @@ exports.run = (client, message, args) => {
     .addField(":star: İsmi Değiştirilen Üye", user)
     .setTimestamp()
     .addField(`:star: Yeni İsmi`, eming + isim)
-    .setFooter("© Register");
+    .setFooter("© TlhaMert");
   message.channel.send(embed);
 };
 exports.conf = {
