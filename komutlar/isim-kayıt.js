@@ -1,17 +1,17 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 exports.run = (client, message, args) => {
-  if (!message.guild.member(message.member.id).roles.has("Yetkili rol id"))
+  if (!message.guild.member(message.member.id).roles.has("701412014559592478"))
     return message.reply(
       `Bu komutu kullanamazsın ${message.guild.roles.get(
-        "yetkili rol id"
+        "701412014559592478"
       )} değilsin.`
     );
 
   let user =
     message.mentions.users.first() || message.guild.members.get(args[0]);
   let isim = args.slice(1).join(" ");
-  let eming = "TAG ";
+  let eming = "♥";
   if (!user)
     return message.channel
       .send("**Etiket Atmayı Unuttun**")
