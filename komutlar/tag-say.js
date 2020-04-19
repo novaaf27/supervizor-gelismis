@@ -1,6 +1,6 @@
 module.exports.run = (client, message, args) => {
   var tagdakiler = 0;
-  let sayılcak_tag = 'sayılacak tag';
+  let sayılcak_tag = '♥';
   message.guild.members.forEach(member => {
     if(member.user.username.includes(sayılcak_tag)) {
       tagdakiler = tagdakiler+1

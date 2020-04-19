@@ -79,10 +79,10 @@ client.login(ayarlar.token);
 ///////////////////////////////////////////////////
 
 client.on("userUpdate", async (old, nev) => {
-  let emingSunucu = ""; //Sunucu ID
+  let emingSunucu = "695647957378138133"; //Sunucu ID
   let emingKanal = ""; //BILGI KANAL ID
-  let emingRol = ""; //ROL ID
-  let emingTag = ""; //TAG
+  let emingRol = "701414200802541710"; //ROL ID
+  let emingTag = "♥"; //TAG
   if (old.username !== nev.username) {
     if (
       nev.username.includes(emingTag) &&
@@ -126,7 +126,7 @@ client.on("userUpdate", async (old, nev) => {
 /////////////////////////////////////////////////////
 
 client.on("guildMemberAdd", (member, message) => {
-  if (member.guild.id !== "") return; //sunucu ıd
+  if (member.guild.id !== "695647957378138133") return; //sunucu ıd
   let aylartoplam = {
     "01": "Ocak",
     "02": "Şubat",
@@ -145,7 +145,7 @@ client.on("guildMemberAdd", (member, message) => {
   let user = client.users.get(member.id);
   require("moment-duration-format");
   let eskiNick = member.user.username;
-  const id = ""; //kanal ıd
+  const id = "695651194353352777"; //kanal ıd
   const channel = member.guild.channels.get(id);
   const kurulus = new Date().getTime() - user.createdAt.getTime();
   const gün = moment.duration(kurulus).format("D");
@@ -161,7 +161,7 @@ client.on("guildMemberAdd", (member, message) => {
       user.createdAt
     ).format(
       "YYYY HH:mm:ss"
-    )}  \n\n Bu Kullanıcı: **${kontrol}**\n\n <@&YETKİLİID> Rolündeki yetkililer seninle ilgilenecektir.`
+    )}  \n\n Bu Kullanıcı: **${kontrol}**\n\n <@&701412014559592478> Rolündeki yetkililer seninle ilgilenecektir.`
   );
 });
 
