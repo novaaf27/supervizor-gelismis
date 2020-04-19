@@ -29,7 +29,7 @@ exports.run = async (client, message, args) => {
     .addField(`:star: Verilen Rol`, message.guild.roles.get(vrol))
     .setTimestamp()
     .addField(`:star: Alınan Rol`, message.guild.roles.get(arol))
-    .setFooter("© Register");
+    .setFooter("© TlhaMert");
   message.channel.send(embed);
 };
 
@@ -42,6 +42,6 @@ exports.conf = {
 
 exports.help = {
   name: "erkek",
-  description: "taslak",
-  usage: "erkek"
+  description: "Erkek Üyeyi Kayıt etme komutu ",
+  usage: "!erkek"
 };

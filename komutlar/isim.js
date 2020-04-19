@@ -45,6 +45,6 @@ exports.conf = {
 
 exports.help = {
   name: "isim",
-  description: "taslak",
-  usage: "isim"
+  description: "İsmini düzeltir.",
+  usage: "!isim"
 };

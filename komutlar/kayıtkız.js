@@ -38,7 +38,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "erkek",
-  description: "taslak",
-  usage: "erkek"
+  name: "kız",
+  description: "Kız üyeyi kayıt eder.",
+  usage: "!kız"
 };

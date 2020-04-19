@@ -44,7 +44,7 @@ exports.conf = {
 
 exports.help = {
   name: "say",
-  description: "Sayım yapar.",
-  usage: "say",
-  kategori: "kullanıcı"
+  description: "Sunucudaki üyeleri sayar.",
+  usage: "!say",
+  kategori: "moderasyon"
 };
