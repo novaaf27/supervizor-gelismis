@@ -2,9 +2,9 @@
 let rolid = "id"; // BURAYA KULLANICININ TÜM ROLLERİ ALINDIKTAN SONRA VERİLECEK ROLÜN İDSİNİ YAZIN , YAZMAZSANIZ TÜM ROLLERİ ALIR SADECE. 
 ///////////////////////////////////////////
 exports.run = async (client, message, args) => {
-  if (!message.member.roles.has("YETKİLİ ROL ID"))
+  if (!message.member.roles.has("695652720039690280"))
     return message.channel.send(
-      `Bu komutu kullanabilmek için <@&YETKİLİ ROL ID> yetkisine sahip olmasınız.`
+      `Bu komutu kullanabilmek için <@&695652720039690280> yetkisine sahip olmasınız.`
     );
     if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("**Yetkin yok.**");
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
