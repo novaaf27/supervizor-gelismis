@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 
 exports.run = (client, message, args) => {
-  if (message.author.id != "KULLANABİLCEK KİŞİNİN İD")//Bot Sahibinin ID'si
+  if (message.author.id != "505426486954819585")//Bot Sahibinin ID'si
     return message.reply(":x: Bu Komutu Sadece yapımcım Kullanabilir!");
 
   if (!message.guild) {

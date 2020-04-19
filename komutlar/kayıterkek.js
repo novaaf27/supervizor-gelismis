@@ -2,12 +2,12 @@ const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
 
-let kayityetkili = '' //KAYIT YETKİLİSİ ID
-let verbuse = '' //VERİLECEK ROL ID
-let verbusem = '' //VERİLECEK ROL ID
-let albuse = '' //ALINACAK ROL ID
-let albusem = '' //ALINACAK ROL ID
-let isimön = '' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+let kayityetkili = '701412014559592478' //KAYIT YETKİLİSİ ID
+let verbuse = '695652616583118849' //VERİLECEK ROL ID
+let verbusem = '701412909359562772' //VERİLECEK ROL ID
+let albuse = '701412703625019402' //ALINACAK ROL ID
+let albusem = '' //ALINACAK ROL ID l Kullanmicaksanız silin
+let isimön = '♥' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 let isimson = '' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
 
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
