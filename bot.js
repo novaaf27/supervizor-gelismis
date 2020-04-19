@@ -87,7 +87,7 @@ client.login(ayarlar.token);
 
 client.on("userUpdate", async (old, nev) => {
   let emingSunucu = "695647957378138133"; //Sunucu ID
-  let emingKanal = ""; //BILGI KANAL ID
+  let emingKanal = "695651392173506672"; //BILGI KANAL ID
   let emingRol = "701414200802541710"; //ROL ID
   let emingTag = "♥"; //TAG
   if (old.username !== nev.username) {
