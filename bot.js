@@ -82,7 +82,7 @@ client.on("userUpdate", async (old, nev) => {
   let emingSunucu = ""; //Sunucu ID
   let emingKanal = ""; //BILGI KANAL ID
   let emingRol = ""; //ROL ID
-  let emingTag = "Hz."; //TAG
+  let emingTag = ""; //TAG
   if (old.username !== nev.username) {
     if (
       nev.username.includes(emingTag) &&
@@ -126,7 +126,7 @@ client.on("userUpdate", async (old, nev) => {
 /////////////////////////////////////////////////////
 
 client.on("guildMemberAdd", (member, message) => {
-  if (member.guild.id !== "665499317447950336") return; //sunucu ıd
+  if (member.guild.id !== "") return; //sunucu ıd
   let aylartoplam = {
     "01": "Ocak",
     "02": "Şubat",
