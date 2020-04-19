@@ -1,5 +1,5 @@
 ////////////////////////////////////////////
-let rolid = "id"; // BURAYA KULLANICININ TÜM ROLLERİ ALINDIKTAN SONRA VERİLECEK ROLÜN İDSİNİ YAZIN , YAZMAZSANIZ TÜM ROLLERİ ALIR SADECE. 
+let rolid = "695990361474072676"; // BURAYA KULLANICININ TÜM ROLLERİ ALINDIKTAN SONRA VERİLECEK ROLÜN İDSİNİ YAZIN , YAZMAZSANIZ TÜM ROLLERİ ALIR SADECE. 
 ///////////////////////////////////////////
 exports.run = async (client, message, args) => {
   if (!message.member.roles.has("695652720039690280"))
@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: ["hapset"],
+    aliases: ["jail"],
     permLevel: 0
 };
 
