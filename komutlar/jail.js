@@ -1,10 +1,10 @@
 ////////////////////////////////////////////
-let rolid = "695990361474072676"; // BURAYA KULLANICININ TÜM ROLLERİ ALINDIKTAN SONRA VERİLECEK ROLÜN İDSİNİ YAZIN , YAZMAZSANIZ TÜM ROLLERİ ALIR SADECE. 
+let rolid = "703504240819306576"; // BURAYA KULLANICININ TÜM ROLLERİ ALINDIKTAN SONRA VERİLECEK ROLÜN İDSİNİ YAZIN , YAZMAZSANIZ TÜM ROLLERİ ALIR SADECE. 
 ///////////////////////////////////////////
 exports.run = async (client, message, args) => {
-  if (!message.member.roles.has("695652720039690280"))//Bu komutu kullanıcak kişinin ıdsini yazın.
+  if (!message.member.roles.has("703504017220960267"))//Bu komutu kullanıcak kişinin ıdsini yazın.
     return message.channel.send(
-      `Bu komutu kullanabilmek için <@&695652720039690280> yetkisine sahip olmasınız.`//Bu komutu kullanıcak kişinin ıdsini yazın.
+      `Bu komutu kullanabilmek için <@&703504017220960267> yetkisine sahip olmasınız.`//Bu komutu kullanıcak kişinin ıdsini yazın.
     );
     if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("**Yetkin yok.**");
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);

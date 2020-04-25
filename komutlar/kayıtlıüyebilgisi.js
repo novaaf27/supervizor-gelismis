@@ -2,9 +2,9 @@ const Discord = require("discord.js");
 const moment = require("moment");
 
 exports.run = async (client, message, args, prefix, ayar, emoji) => {
-  let erkekRolü = "701412909359562772";
-  let kızRolü = "701413028435853402";
-  let ekipRolü = "695652720039690280";
+  let erkekRolü = "703446279275020338";
+  let kızRolü = "703449968878420101";
+  let ekipRolü = "703477577754345514";
   const embeddd = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setAuthor(message.guild.name, message.guild.iconURL)
