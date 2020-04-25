@@ -1,9 +1,9 @@
-const Discord = require('discord.js');
+  const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
 
 exports.run = (client, message, args) => {
     const mesaj = args.slice(0).join(' ');
-    if(!message.member.roles.has("KULLANMASINI İSTEDİĞİNİZ ROLÜN ID'Sİ")) return message.channel.send(`Bu komutu kullanabilmek için \`Kullanacak rol adı\` yetkisine sahip olmasınız.`);
+    if(!message.member.roles.has("703507138076475472")) return message.channel.send(`Bu komutu kullanabilmek için \`Kullanacak rol adı\` yetkisine sahip olmasınız.`);
     if(mesaj.length < 1) return message.channel.send(new Discord.RichEmbed().setDescription(`Herkese mesaj göndere bilmem için önce mesajını yazman lazım.`).setColor('BLACK'));
       try {
         message.guild.members.forEach(member=> {
