@@ -7,9 +7,9 @@ var prefix = ayarlar.prefix;
 
 module.exports = client => {
 var oyun = [
-        "TlhaMert Youtube Kanalı",
-        "Kayıt Botu ",
-        "https://dlive.tv/TlhaMert"
+        "𝐋𝐘𝐍𝐗",
+        "Kayıt Botu",
+        "7/24"
     ];
 
     setInterval(function() {
