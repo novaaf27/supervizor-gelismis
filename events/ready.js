@@ -8,7 +8,6 @@ var prefix = ayarlar.prefix;
 module.exports = client => {
 var oyun = [
         "ϗ Marin Kayıt Botu",
-        "7/24"
     ];
 
     setInterval(function() {
@@ -24,3 +23,4 @@ var oyun = [
   client.user.setActivity(`${prefix}yardım + ${client.guilds.size} sunucu + ${client.users.size} kullanıcı`);
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Oyun ismi ayarlandı!`);
 };
+  
