@@ -8,7 +8,7 @@ let verbusem = '707666048337576028' //VERİLECEK ROL ID
 let albuse = '709061522579652608' //ALINACAK ROL ID
 let albusem = '709061522579652608' //ALINACAK ROL ID l Kullanmicaksanız silin
 let isimön = '✝' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
-let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
+let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA 
 
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
 
