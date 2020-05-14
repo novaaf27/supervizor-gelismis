@@ -7,7 +7,7 @@ var prefix = ayarlar.prefix;
 
 module.exports = client => {
 var oyun = [
-        "Kayıt Botu",
+        "ϗ Marin Kayıt Botu",
         "7/24"
     ];
 
