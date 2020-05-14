@@ -7,8 +7,7 @@ let verbuse = '707666048337576028' //VERİLECEK ROL ID
 let verbusem = '707666048337576028' //VERİLECEK ROL ID
 let albuse = '709061522579652608' //ALINACAK ROL ID
 let albusem = '709061522579652608' //ALINACAK ROL ID l Kullanmicaksanız silin
-let isimön = '✝' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
-let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA 
+let isimön = 'ϗ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
 
@@ -21,7 +20,7 @@ let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA
   if (!isim) return message.channel.send('Bir İsim Yazmalısın 💖')
 
   setTimeout(function(){
-  member.setNickname(`${isimön}${isim}${isimson}`)
+  member.setNickname(`${isimön}${isim}`)
   },2000)
   setTimeout(function(){
   member.addRole(verbuse)
@@ -37,7 +36,7 @@ let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA
   .setColor('RANDOM')
   .setDescription(`✅ Kayıt işlemi Başarılı ✅
 
-**Kayıt edilen kullanıcı :** ${isimön}${isim}${isimson}
+**Kayıt edilen kullanıcı :** ${isimön}${isim}
 
 **Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
 
