@@ -37,11 +37,11 @@ let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
   .setColor('RANDOM')
   .setDescription(`✅ Kayıt işlemi Başarılı ✅
 
-**Kayıt edilen kullanıcı :** ${isimön}${isim}${isimson}
+<a:raptiye:709140252488368953> **Kayıt edilen kullanıcı :** ${isimön}${isim}${isimson}
 
-**Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
+<a:raptiye:709140252488368953> **Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
 
-**Kayıt işleminde alınan rol :** <@&${albuse}>, <@&${albusem}>
+<a:raptiye:709140252488368953> **Kayıt işleminde alınan rol :** <@&${albuse}>, <@&${albusem}>
 `)
   .setFooter(`Komutu kullanan yetkili : ${message.author.username}`) 
   .setImage("https://37.media.tumblr.com/f1d867e7b7771f57ccf325a13630ce29/tumblr_n3zeepZMFm1ttv14wo1_r1_250.gif")
