@@ -2,13 +2,12 @@ const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
 
-let kayityetkili = '707665608527052881' //KAYIT YETKİLİSİ ID
-let verbuse = '707666356992213132' //VERİLECEK ROL ID
-let verbusem = '707666356992213132' //VERİLECEK ROL ID
-let albuse = '709061522579652608' //ALINACAK ROL ID
-let albusem = '709061522579652608' //ALINACAK ROL ID l Kullanmicaksanız silin kötü gözükür .
-let isimön = '✝' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
-let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
+let kayityetkili = '710930872102289428' //KAYIT YETKİLİSİ ID
+let verbuse = '707595428304257104' //VERİLECEK ROL ID
+let verbusem = '707595428304257104' //VERİLECEK ROL ID
+let albuse = '712055785353641995' //ALINACAK ROL ID
+let albusem = '712055785353641995' //ALINACAK ROL ID l Kullanmicaksanız silin kötü gözükür .
+let isimön = 'ϗ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
 
@@ -21,7 +20,6 @@ let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
   if (!isim) return message.channel.send('Bir İsim Yazmalısın 💖')
 
   setTimeout(function(){
-  member.setNickname(`${isimön}${isim}${isimson}`)
   },2000)
   setTimeout(function(){
   member.addRole(verbuse)
@@ -37,11 +35,11 @@ let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
   .setColor('RANDOM')
   .setDescription(`✅ Kayıt işlemi Başarılı ✅
 
-<a:raptiye:709140252488368953> **Kayıt edilen kullanıcı :** ${isimön}${isim}${isimson}
+**Kayıt edilen kullanıcı :** ${isimön}${isim}
 
-<a:raptiye:709140252488368953> **Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
+**Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
 
-<a:raptiye:709140252488368953> **Kayıt işleminde alınan rol :** <@&${albuse}>, <@&${albusem}>
+**Kayıt işleminde alınan rol :** <@&${albuse}>, <@&${albusem}>
 `)
   .setFooter(`Komutu kullanan yetkili : ${message.author.username}`) 
   .setImage("https://37.media.tumblr.com/f1d867e7b7771f57ccf325a13630ce29/tumblr_n3zeepZMFm1ttv14wo1_r1_250.gif")

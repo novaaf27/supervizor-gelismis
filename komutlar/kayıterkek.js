@@ -2,11 +2,11 @@ const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
 
-let kayityetkili = '707665608527052881' //KAYIT YETKİLİSİ ID
-let verbuse = '707666048337576028' //VERİLECEK ROL ID
-let verbusem = '707666048337576028' //VERİLECEK ROL ID
-let albuse = '709061522579652608' //ALINACAK ROL ID
-let albusem = '709061522579652608' //ALINACAK ROL ID l Kullanmicaksanız silin
+let kayityetkili = '710930872102289428' //KAYIT YETKİLİSİ ID
+let verbuse = '707595186347180062' //VERİLECEK ROL ID
+let verbusem = '707595186347180062' //VERİLECEK ROL ID
+let albuse = '712055785353641995' //ALINACAK ROL ID
+let albusem = '712055785353641995' //ALINACAK ROL ID l Kullanmicaksanız silin
 let isimön = 'ϗ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
@@ -36,11 +36,11 @@ let isimön = 'ϗ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
   .setColor('RANDOM')
   .setDescription(`✅ Kayıt işlemi Başarılı ✅
 
-<a:raptiye:709140252488368953> **Kayıt edilen kullanıcı :** ${isimön}${isim}
+**Kayıt edilen kullanıcı :** ${isimön}${isim}
 
-<a:raptiye:709140252488368953> **Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
+**Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
 
-<a:raptiye:709140252488368953> **Kayıt işleminde alınan rol :** <@&${albuse}>, <@&${albusem}>
+**Kayıt işleminde alınan rol :** <@&${albuse}>, <@&${albusem}>
 `)
   .setFooter(`Komutu kullanan yetkili : ${message.author.username}`) 
   .setImage("https://37.media.tumblr.com/f1d867e7b7771f57ccf325a13630ce29/tumblr_n3zeepZMFm1ttv14wo1_r1_250.gif")

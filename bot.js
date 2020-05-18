@@ -173,9 +173,3 @@ client.on("guildMemberAdd", (member, message) => {
 });
 
 //////////////////////////////////////////////////////
-
-
-client.on("ready", () => {
-  client.channels.get("702647798306439249").join();
-   //main dosyaya atılacak
-})
