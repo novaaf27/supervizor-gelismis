@@ -20,22 +20,22 @@ let isimön = 'ϗ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
   if (!isim) return message.channel.send('Bir İsim Yazmalısın 💖')
 
   setTimeout(function(){
-  },2000)
+  },1000)
   setTimeout(function(){
   member.addRole(verbuse)
   member.addRole(verbusem)
-  },3000)
+  },2000)
   setTimeout(function(){
   member.removeRole(albuse)
   member.addRole(albusem)
-  },4000)
+  },3000)
   
  const emoji = client.emojis.find(emoji => emoji.name === "tik");
  let embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setDescription(`✅ Kayıt işlemi Başarılı ✅
 
-**Kayıt edilen kullanıcı :** ${isimön}${isim}
+**Kayıt edilen kullanıcı :** ${isimön}|{isim}
 
 **Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
 
