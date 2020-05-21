@@ -1,65 +1,61 @@
-const Discord = require("discord.js");
-const data = require('quick.db');
-exports.run = async (client, message, args) => {// chimp#6907
-if(!message.member.roles.has(`712684893829595196`)) return;
-// Sadece role sahip olanlar kullansın istiyorsanız 4. satır yerine:
-// if(!message.member.roles.has(`rol id`)) return;
+const Discord = require('discord.js');
+
+exports.run = async (client, message, args) => {
+
+let kayityetkili = '712964941812072468' //KAYIT YETKİLİSİ ID
+let verbuse = '712964718444150875' //VERİLECEK ROL ID
+let verbusem = '712964718444150875' //VERİLECEK ROL ID
+let albuse = '712965059894181900' //ALINACAK ROL ID
+let albusem = '712965059894181900' //ALINACAK ROL ID l Kullanmicaksanız silin
+let isimön = '⌑ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+
+//TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
+
+  if(!message.member.roles.has(kayityetkili)) 
+  if(!message.member.hasPermission("ADMINISTRATOR"))
+  return message.channel.send(`Bu komutu kullanabilmek için \`Kayıt\` yetkisine sahip olmasınız.`);
+  let member = message.mentions.members.first()
+  let isim = args.slice(1).join(" ")
+  if (!member) return message.channel.send('Bir Üye Etiketlemelisin💖')
+  if (!isim) return message.channel.send('Bir İsim Yazmalısın 💖')
+
+  setTimeout(function(){
+  member.setNickname(`${isimön}${isim}`)
+  },2000)
+  setTimeout(function(){
+  member.addRole(verbuse)
+  member.addRole(verbusem)
+  },3000)
+  setTimeout(function(){
+  member.removeRole(albuse)
+  member.addRole(albusem)
+  },4000)
   
-if(!args[0]) return message.channel.send(`Bir kişiyi etiketlemelisin.`)
+ const emoji = client.emojis.find(emoji => emoji.name === "tik");
+ let embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setDescription(`✅ Kayıt işlemi Başarılı ✅
 
-let isimön = 'Δ'  
-let role = message.guild.roles.get(`707595428304257104`)// Erkek rol id
-let unregistered = message.guild.roles.get(`712055785353641995`)// Kayıtsız rol id
-let channel = message.guild.channels.get(`712106936669306901`) || message.channel// Log kanal id girin, boş bırakırsanız komutun kullanıldığı kanala logu yollar.
+**Kayıt edilen kullanıcı :** ${isimön}${isim}
 
-let kullanıcı = message.mentions.users.first()
-if(!kullanıcı) return message.channel.send(`${args[0]}, kullanıcısını sunucuda bulamıyorum.`)
-if(kullanıcı.bot) return;
-  
-let isim = args[1];
-if(!isim) return message.channel.send(`${args[0]}, için bir isim girmelisin.`)
-if(isim.length > 16) return message.channel.send(`Daha kısa bir isim yaz.`)
+**Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
 
-let yaş = args[2];
-if(!yaş) return message.channel.send(`${args[0]}, için bir isim gir.`)
-if(yaş.length > 2) return message.channel.send(`Adam 100 yaşında değil ya?`)
-  
-const emb = new Discord.RichEmbed()
-.setAuthor(client.user.username, client.user.avatarURL)
-.setThumbnail(client.user.avatarURL)
-.setTimestamp()
-.setColor(`#fffff0`)
-.setFooter(`#${message.channel.name} kanalında kullanıldı.`)
-
-message.guild.members.get(kullanıcı.id).setNickname(`${isimön} ${isim} | ${yaş}`)
-message.guild.members.get(kullanıcı.id).addRole(role.id)
-message.guild.members.get(kullanıcı.id).removeRole(unregistered.id)
-message.guild.members.get(kullanıcı.id).send(emb.setDescription(`**${message.author} tarafından ${isim} | ${yaş} olarak kayıt edildin.`))
-
-channel.send(
-emb.setDescription(`${kullanıcı}, kullanıcısı kayıt edildi.`)
-.addField(`Kayıt eden:`, message.author, true)
-.addField(`Yeni ismi:`, args[1], true)
-.addField(`Yeni yaşı:`, args[2], true)
-.addField(`Verilen rol:`, role.name, true)
-.addField(`Alınan rol:`, unregistered.name, true))
-  
- message.channel.send(
- emb.setDescription(`${kullanıcı}, kullanıcısı kayıt edildi.`)
-.addField(`Kayıt eden:`, message.author, true)
-.addField(`Yeni ismi:`, args[1], true)
-.addField(`Yeni yaşı:`, args[2], true)
-.addField(`Verilen rol:`, role.name, true)
-.addField(`Alınan rol:`, unregistered.name, true))
-
-}
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ['e'],
-  permLevel: 0
+**Kayıt işleminde alınan rol :** <@&${albuse}>, <@&${albusem}>
+`)
+  .setFooter(`Komutu kullanan yetkili : ${message.author.username}`) 
+  .setImage("https://37.media.tumblr.com/f1d867e7b7771f57ccf325a13630ce29/tumblr_n3zeepZMFm1ttv14wo1_r1_250.gif")
+message.channel.send(embed)
+message.react(emoji)
 };
 
+exports.conf = {
+  enabled: true,
+  guildOnly: true,
+  aliases: ['oyuncu','o'],
+  permLevel: 0
+}
 exports.help = {
-  name: 'k'
-};// codare
+  name: 'kız',
+  description: "Bayan kullanıcıları kayıt etme komutu.",
+  usage: '!kız <yeni nick>'
+}

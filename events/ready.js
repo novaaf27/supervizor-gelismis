@@ -7,7 +7,7 @@ var prefix = ayarlar.prefix;
 
 module.exports = client => {
 var oyun = [
-        "Night",
+        "Night Of Fire",
     ];
 
     setInterval(function() {
