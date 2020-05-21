@@ -4,7 +4,7 @@ const moment = require("moment");
 exports.run = async (client, message, args, prefix, ayar, emoji) => {
   let erkekRolü = "712964682045980693";
   let kızRolü = "712964718444150875";
-  let ekipRolü = "712099997482745956";
+  let ekipRolü = "712964941812072468";
   const embeddd = new Discord.RichEmbed()
     .setColor("BLACK")
     .setAuthor(message.guild.name, message.guild.iconURL)
