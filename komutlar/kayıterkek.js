@@ -2,12 +2,12 @@ const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
 
-let kayityetkili = '712404662011166740' //KAYIT YETKİLİSİ ID
-let verbuse = '707595186347180062' //VERİLECEK ROL ID
-let verbusem = '707595186347180062' //VERİLECEK ROL ID
-let albuse = '712055785353641995' //ALINACAK ROL ID
-let albusem = '712055785353641995' //ALINACAK ROL ID l Kullanmicaksanız silin
-let isimön = 'ϗ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+let kayityetkili = '708750603249254424' //KAYIT YETKİLİSİ ID
+let verbuse = '708748652075679844' //VERİLECEK ROL ID
+let verbusem = '708748652075679844' //VERİLECEK ROL ID
+let albuse = '708751536729358377' //ALINACAK ROL ID
+let albusem = '708751536729358377' //ALINACAK ROL ID l Kullanmicaksanız silin
+let isimön = '⌑ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
 
@@ -55,7 +55,7 @@ exports.conf = {
   permLevel: 0
 }
 exports.help = {
-  name: 'erkek',
+  name: 'e',
   description: "Erkek kullanıcıları kayıt etme komutu.",
-  usage: '!erkek <yeni nick>'
+  usage: '!e <yeni nick>'
 }
