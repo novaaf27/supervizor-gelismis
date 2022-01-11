@@ -1,31 +1,31 @@
 {
-  "guildID": "",
-  "publicParent": "",
-  "sleepRoom": "",
+  "guildID": "922579435205591163",
+  "publicParent": "922579435679518791",
+  "sleepRoom": "928383716445806602",
   "taglıAlım": false,
-  "chat": "",
-  "teams": [],
-  "specialRoles": { "vip": "" },
+  "chat": "929452570487975946",
+  "teams": ["928382098128109608"],
+  "specialRoles": { "vip": "930549323660402818" },
   "registration": {
-    "channel": "",
+    "channel": "926964406351433749",
     "brace": " | ",
-    "staffs": [],
-    "manRoles": [],
-    "womanRoles": [],
-    "unregRoles": []
+    "staffs": ["926842334853873664"],
+    "manRoles": ["926842138476568636"],
+    "womanRoles": ["926842219921547274"],
+    "unregRoles": ["926842285277184002"]
   },
   "tag": {
-    "role": "",
-    "log": "",
-    "tag": "",
+    "role": "926842494170312713",
+    "log": "922579638071476234",
+    "tag": "-",
     "tag2": "•"
   },
   "jail": {
-    "channel": "",
-    "roles": []
+    "channel": "926842711900848128",
+    "roles": ["926842437677248553"]
   },
   "invite": {
-    "channel": ""
+    "channel": "922579638071476234"
   },
   "emojis": {
     "coin": ""
