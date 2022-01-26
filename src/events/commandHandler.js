@@ -20,11 +20,11 @@ module.exports = async (message) => {
   let args = message.content.substring(prefix.length).trim().split(" ");
   let commandName = args[0].toLowerCase();
 
-  const theark = await client.users.fetch("350976460313329665");
+  const matfz = await client.users.fetch("709809776720216207");
   const embed = new MessageEmbed()
     .setColor(message.member.displayHexColor)
     .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true, size: 2048 }))
-    .setFooter("Developed by Theark", theark.avatarURL({ dynamic: true }));
+    .setFooter("Developed by Matfz", matfz.avatarURL({ dynamic: true }));
 
   args = args.splice(1);
   const cmd = client.commands.get(commandName) || client.commands.array().find((x) => x.conf.aliases && x.conf.aliases.includes(commandName));

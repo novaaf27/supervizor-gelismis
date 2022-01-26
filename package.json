@@ -2,7 +2,7 @@
   "name": "discord-supervisor",
   "version": "0.0.1",
   "description": "A simple Discord supervisor bot.",
-  "main": "theark.js",
+  "main": "matfz.js",
   "scripts": {
     "start": "node ."
   },

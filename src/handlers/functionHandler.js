@@ -89,11 +89,11 @@ module.exports = async (client) => {
    * @returns {Promise<void>}
    */
   TextChannel.prototype.error = async function (message, text) {
-    const theark = await client.users.fetch("350976460313329665");
+    const matfz = await client.users.fetch("709809776720216207");
     const embed = new MessageEmbed()
       .setColor("RED")
       .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true, size: 2048 }))
-      .setFooter("Developed by Theark", theark.avatarURL({ dynamic: true }));
+      .setFooter("Developed by Matfz", matfz.avatarURL({ dynamic: true }));
     this.send(embed.setDescription(text)).then((x) => { if (x.deletable) x.delete({ timeout: 10000 }); });
   };
 
